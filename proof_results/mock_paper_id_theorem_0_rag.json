@@ -1,0 +1,121 @@
+{
+  "paper_id": "mock_paper_id",
+  "theorem_index": 0,
+  "theorem_statement": "Let A be finite then |3A| \\ge c|A|^{1+\\delta}.",
+  "generated_proof": "### Proof Sketch\n- The theorem, as stated for arbitrary finite A, cannot hold: if A is an arithmetic progression of length n in the integers, then 3A has size 3n−2, which is only linear in |A|, contradicting any superlinear lower bound c|A|^{1+δ} with fixed δ>0 for large n.\n- Thus a hidden non-structure hypothesis is needed. A standard such hypothesis in additive combinatorics over the reals is small multiplicative doubling (|AA|≤K|A|), which via the sum–product phenomenon forces additive growth.\n- Specifically, the (classical) Solymosi sum–product inequality implies |A+A|^2|AA| ≳ |A|^4/log|A|, hence |A+A| ≳ |A|^{3/2}/√log|A| when |AA|≤K|A|.\n- After translating A so that 0∈A (which preserves |3A|), we have A+A ⊂ 3A, hence |3A| ≥ |A+A|. Combining yields |3A| ≳ |A|^{3/2}/√log|A|.\n- The log loss can be absorbed into the constant to obtain a clean power bound |3A| ≥ c(K,δ)|A|^{1+δ} for any fixed δ<1/2 and all finite A with |AA|≤K|A|.\n- Conclusion: Without extra hypotheses the theorem is false, but under a standard non-structure condition one obtains the desired superlinear growth.\n\n### Proof\nWe first show the theorem as stated is false in general, then present a corrected version with a rigorous argument (with one classical step stated as a GAP).\n\nCounterexample (disproving the stated theorem):\n- Work in the additive group of integers. For each integer n≥2, let A=[0,n−1]:={0,1,2,…,n−1}. Then 3A=A+A+A={0,1,2,…,3(n−1)} has cardinality |3A|=3(n−1)+1=3n−2.\n- Suppose there exist fixed constants c>0 and δ>0 for which the theorem holds for all finite A. Applying it to A=[0,n−1] gives 3n−2 ≥ c n^{1+δ} for all n. Dividing by n and letting n→∞, the right-hand side grows like n^{δ}→∞ while the left-hand side tends to 3, a contradiction.\n- Hence there are no universal constants c>0, δ>0 satisfying |3A| ≥ c|A|^{1+δ} for all finite A. This proves the negation of the theorem as stated. ∎\n\nA corrected, provable statement (under a standard non-structure hypothesis):\nTheorem (corrected). Let A⊂R be finite and suppose |AA| ≤ K|A| for some fixed K≥1. Then for every fixed δ∈(0,1/2) there is a constant c=c(K,δ)>0 such that\n|3A| ≥ c |A|^{1+δ}.\n\nProof of corrected theorem:\n- Step 1: Normalization. Fix any a0∈A and consider the translate A′:=A−a0. Then |A′|=|A| and 3A′=3A−3a0, hence |3A′|=|3A|. Also, |A′A′|=|AA| (since multiplication is translation-invariant in exponents? Not needed; we only use |AA| ≤ K|A| for A itself). We will work with A′ and drop the prime; in particular we may assume 0∈A. Under this assumption, for any x∈A+A we can write x=(a+b)+0 with a,b,0∈A, so A+A ⊂ A+A+A=3A and therefore\n  |3A| ≥ |A+A|.    (1)\n- Step 2: Sum–product input. We invoke the following standard inequality over the reals.\n\n  GAP: Sum–product lower bound (Solymosi). There exists an absolute constant c0>0 such that for all finite A⊂R,\n  |A+A|^2 |AA| ≥ c0 |A|^4 / log |A|.\n\n  Using |AA| ≤ K|A|, we deduce\n  |A+A| ≥ (c0/K)^{1/2} |A|^{3/2} / √(log |A|).    (2)\n- Step 3: From |A+A| to |3A|. Combining (1) and (2) yields\n  |3A| ≥ (c0/K)^{1/2} |A|^{3/2} / √(log |A|).    (3)\n- Step 4: Removing the logarithm at the cost of δ<1/2. Fix any δ∈(0,1/2). Define\n  c(K,δ) := (c0/K)^{1/2} inf_{n≥2} n^{1/2−δ} / √(log n) > 0,\n  where the infimum is over integers n and is positive because the function n↦n^{1/2−δ}/√(log n) is continuous on [2,∞), bounded below by a positive number, and tends to ∞ as n→∞. Then for every finite A with |A|≥2, inequality (3) implies\n  |3A| ≥ c(K,δ) |A|^{1+δ}.\n- This proves the corrected theorem. ∎\n\nRemarks:\n- The counterexample shows the original theorem cannot be true without additional hypotheses; arithmetic progressions force only linear growth of 3A.\n- The small-multiplicative-doubling hypothesis is one standard way to ensure superlinear additive growth",
+  "proof_char_len": 3788,
+  "proof_sections": null,
+  "model_used": "gpt-5",
+  "generation_time": 228.8612756729126,
+  "success": true,
+  "error_message": null,
+  "token_count": 6794,
+  "generated_at": "2025-10-01T08:59:48.149458",
+  "quality": {
+    "math_balance_ok": true,
+    "structure_markers": 3,
+    "conclusion_symbol": true,
+    "word_count": 606,
+    "length_category": "long",
+    "lemma_ref_count": 0,
+    "theorem_overlap_ratio": 0.8,
+    "aggregate_score": 4,
+    "sketch_char_len": 0,
+    "full_proof_char_len": 1076,
+    "has_split_proof_sections": true,
+    "prompt_char_len": 3250,
+    "context_char_len": 622,
+    "provenance": {
+      "sections": [
+        {
+          "title": "Intro",
+          "original_chars": 19,
+          "included_chars": 19,
+          "truncated": false
+        },
+        {
+          "title": "Lemmas",
+          "original_chars": 42,
+          "included_chars": 42,
+          "truncated": false
+        },
+        {
+          "title": "Main",
+          "original_chars": 76,
+          "included_chars": 76,
+          "truncated": false
+        }
+      ],
+      "available_theorems_count": 1,
+      "target_theorem_index": 0,
+      "truncated_context": false,
+      "context_char_limit": 50000,
+      "rag": {
+        "enabled": true,
+        "small_doc_bypass": false,
+        "cache_used": true,
+        "cache_path": "data/rag_cache\\mock_paper_id_400_80.json",
+        "query_raw": "Let A be finite then |3A| \\ge c|A|^{1+\\delta}.",
+        "query_normalized": "let a be finite then |3a| \\ge c|a|^ 1+\\delta .",
+        "force_rag": true,
+        "doc_chars": 220,
+        "chunk_size": 400,
+        "overlap": 80,
+        "top_k_requested": 3,
+        "small_doc_threshold": 600,
+        "hash_prefix": "6a277deedb3d",
+        "token_coverage_before": 1.0,
+        "fallback_added": false,
+        "token_coverage_after": 1.0,
+        "merged": false,
+        "selected_coverage_ratio": 1.0,
+        "effective_top_k": 1,
+        "total_chunks": 1,
+        "top_k": 3,
+        "selected": [
+          {
+            "id": 0,
+            "score": 0.3381205758829,
+            "start_char": 0,
+            "end_char": 220,
+            "char_len": 220
+          }
+        ]
+      }
+    },
+    "structural": {
+      "symbol_total": 188,
+      "symbol_introduced": 12,
+      "symbol_undefined": [
+        "AA",
+        "Af",
+        "Al",
+        "Ap",
+        "Co",
+        "De",
+        "Di",
+        "Fi",
+        "Fo",
+        "Fr",
+        "GA",
+        "He",
+        "K",
+        "No",
+        "P",
+        "Pr",
+        "R",
+        "Re",
+        "Sk",
+        "Sp"
+      ],
+      "symbol_undefined_count": 219,
+      "lemma_ref_count": 0,
+      "lemma_missing": [],
+      "lemma_missing_count": 0,
+      "hallucination_risk_level": "medium"
+    }
+  },
+  "variant": "rag",
+  "input_tokens": 834,
+  "output_tokens": 5960
+}

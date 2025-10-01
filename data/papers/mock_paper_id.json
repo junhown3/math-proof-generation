@@ -1,0 +1,15 @@
+{
+  "arxiv_id": "mock_paper_id",
+  "title": "Mock Paper on Additive Number Theory",
+  "authors": [
+    "A. Researcher"
+  ],
+  "abstract": "Study of additive growth in finite sets.",
+  "subjects": [
+    "math.NT"
+  ],
+  "published_date": "2025-10-01T06:54:54.185968+00:00",
+  "latex_content": "\\begin{abstract}Study.\\end{abstract}\\n\\section{Intro}Definitions of A.\\n\\section{Lemmas}\\begin{lemma}Let A be finite.\\end{lemma}\\n\\section{Main}\\begin{theorem}Let A be finite then |3A| \\ge c|A|^{1+\\delta}.\\end{theorem}\\n",
+  "main_tex_file": "main.tex",
+  "saved_at": "2025-10-01T01:54:54.185968"
+}

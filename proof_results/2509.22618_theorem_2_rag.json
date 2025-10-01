@@ -1,0 +1,175 @@
+{
+  "paper_id": "2509.22618",
+  "theorem_index": 2,
+  "theorem_statement": "\\label{iden-3} We have\n(a)  \\[ \\sum_{k=1}^{n}N^p_A(k)\\omega(n-k)=\\sum_{k=1}^{n}\\tau_A(k)\\left(q_{\\mathbb N-A}^e(n-k)-q_{\\mathbb N-A}^o(n-k)\\right), \\]\n(b)  \\[ \\sum_{k=1}^n(-1)^{n-k}N^q_A(k)o(n-k)=\\sum_{k=1}^{n}\\tau_A^s(k)\\left(p_{\\mathbb N-A}^e(n-k)-p_{\\mathbb N-A}^o(n-k)\\right). \\]",
+  "generated_proof": "(No textual output extracted)",
+  "proof_char_len": 29,
+  "proof_sections": null,
+  "model_used": "gpt-5",
+  "generation_time": 155.22056078910828,
+  "success": false,
+  "error_message": "LLM produced insufficient proof content (empty or too short).",
+  "token_count": 11861,
+  "generated_at": "2025-10-01T10:21:12.851826",
+  "quality": {
+    "math_balance_ok": true,
+    "structure_markers": 0,
+    "conclusion_symbol": false,
+    "word_count": 4,
+    "length_category": "short",
+    "lemma_ref_count": 0,
+    "theorem_overlap_ratio": 0.0,
+    "aggregate_score": 1,
+    "sketch_char_len": 0,
+    "full_proof_char_len": 0,
+    "has_split_proof_sections": false,
+    "prompt_char_len": 15610,
+    "context_char_len": 12745,
+    "provenance": {
+      "sections": [
+        {
+          "title": "Motivation and Basic Definitions",
+          "original_chars": 5551,
+          "included_chars": 1503,
+          "truncated": true
+        },
+        {
+          "title": " Generating Functions for $N_A^p(n)$ and $N_A^q(n)$, and Six ways to Convolution and Recurrence Identities",
+          "original_chars": 0,
+          "included_chars": 0,
+          "truncated": false
+        },
+        {
+          "title": " Derivation with a Direct Application",
+          "original_chars": 5808,
+          "included_chars": 1503,
+          "truncated": true
+        },
+        {
+          "title": " Inversion",
+          "original_chars": 3797,
+          "included_chars": 1503,
+          "truncated": true
+        },
+        {
+          "title": " Product with $\\prod_{n=1",
+          "original_chars": 1948,
+          "included_chars": 1503,
+          "truncated": true
+        },
+        {
+          "title": " Logarithmic Differentiation",
+          "original_chars": 2817,
+          "included_chars": 1503,
+          "truncated": true
+        },
+        {
+          "title": " Recurrence Identities over $A$",
+          "original_chars": 2008,
+          "included_chars": 1503,
+          "truncated": true
+        },
+        {
+          "title": " Interplay with Carlitz Compositions",
+          "original_chars": 2636,
+          "included_chars": 1503,
+          "truncated": true
+        },
+        {
+          "title": " Asymptotic Estimate of $N_A^p(n)$ when $A$ is a Finite Set",
+          "original_chars": 16062,
+          "included_chars": 1503,
+          "truncated": true
+        }
+      ],
+      "available_theorems_count": 21,
+      "target_theorem_index": 2,
+      "truncated_context": false,
+      "context_char_limit": 50000,
+      "rag": {
+        "enabled": true,
+        "small_doc_bypass": false,
+        "cache_used": true,
+        "cache_path": "data/rag_cache\\2509.22618_900_150.json",
+        "query_raw": "\\label{iden-3} We have\n(a)  \\[ \\sum_{k=1}^{n}N^p_A(k)\\omega(n-k)=\\sum_{k=1}^{n}\\tau_A(k)\\left(q_{\\mathbb N-A}^e(n-k)-q_{\\mathbb N-A}^o(n-k)\\right), \\]\n(b)  \\[ \\sum_{k=1}^n(-1)^{n-k}N^q_A(k)o(n-k)=\\sum_{k=1}^{n}\\tau_A^s(k)\\left(p_{\\mathbb N-A}^e(n-k)-p_{\\mathbb N-A}^o(n-k)\\right). \\]",
+        "query_normalized": "\\label iden-3 we have (a) \\[ \\sum_ k=1 ^ n n^p_a(k)\\omega(n-k)=\\sum_ k=1 ^ n \\tau_a(k)\\left(q_ \\mathbb n-a ^e(n-k)-q_ \\mathbb n-a ^o(n-k)\\right), \\] (b) \\[ \\sum_ k=1 ^n(-1)^ n-k n^q_a(k)o(n-k)=\\sum_ k=1 ^ n \\tau_a^s(k)\\left(p_ \\mathbb n-a ^e(n-k)-p_ \\mathbb n-a ^o(n-k)\\right). \\]",
+        "force_rag": true,
+        "doc_chars": 19692,
+        "chunk_size": 900,
+        "overlap": 150,
+        "top_k_requested": 5,
+        "small_doc_threshold": 1350,
+        "hash_prefix": "8d4626b01d08",
+        "token_coverage_before": 1.0,
+        "fallback_added": false,
+        "token_coverage_after": 1.0,
+        "merged": true,
+        "merged_groups": [
+          [
+            11,
+            12
+          ],
+          [
+            15,
+            16
+          ],
+          [
+            18
+          ]
+        ],
+        "selected_coverage_ratio": 0.18956936827137924,
+        "effective_top_k": 3,
+        "total_chunks": 24,
+        "top_k": 5,
+        "selected": [
+          {
+            "id": "m_11_12",
+            "score": 2.903131778335107,
+            "start_char": 9381,
+            "end_char": 10868,
+            "char_len": 1486
+          },
+          {
+            "id": "m_15_16",
+            "score": 4.496414950141668,
+            "start_char": 12428,
+            "end_char": 13925,
+            "char_len": 1496
+          },
+          {
+            "id": 18,
+            "score": 2.9047465796640615,
+            "start_char": 14825,
+            "end_char": 15577,
+            "char_len": 751
+          }
+        ]
+      }
+    },
+    "structural": {
+      "symbol_total": 12,
+      "symbol_introduced": 25,
+      "symbol_undefined": [
+        "No",
+        "ac",
+        "d",
+        "ex",
+        "ou",
+        "te",
+        "tp",
+        "tr",
+        "ua",
+        "ut",
+        "xt"
+      ],
+      "symbol_undefined_count": 11,
+      "lemma_ref_count": 0,
+      "lemma_missing": [],
+      "lemma_missing_count": 0,
+      "hallucination_risk_level": "medium"
+    }
+  },
+  "variant": "rag",
+  "input_tokens": 5909,
+  "output_tokens": 5952
+}

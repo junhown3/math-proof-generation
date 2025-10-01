@@ -1,0 +1,87 @@
+# Python bytecode and cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.eggs/
+*.egg
+
+# Virtual environments
+.env
+.venv
+venv/
+env/
+ENV/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs & temp
+*.log
+*.tmp
+*.cache
+
+# Build / packaging
+build/
+dist/
+*.whl
+
+# Project data artifacts (keep raw sources out of repo)
+data/raw/
+data/cache/
+data/tmp/
+# RAG cache (can be regenerated)
+data/rag_cache/
+
+# Proof generation outputs (large / regenerable)
+proof_results/*_raw_response.json
+proof_results/*.txt
+proof_pdfs/
+
+# LaTeX auxiliary files
+*.aux
+*.out
+*.toc
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+
+# PDFs (export artifacts)
+*.pdf
+
+# Credentials / Secrets
+*.env
+apikey.txt
+openai_key.txt
+
+# ML/GPU training artifacts
+models/*/
+checkpoints/
+wandb/
+tensorboard_logs/
+*.pt
+*.pth
+*.ckpt
+
+# Large datasets (keep small test sets)
+data/raw/
+data/processed/large/
+
+# SSH keys and configs
+.ssh/
+*_rsa
+*_ed25519
+
+# Misc
+*.bak

@@ -1,0 +1,128 @@
+{
+  "paper_id": "2509.22618",
+  "theorem_index": 0,
+  "theorem_statement": "\\label{iden-1} Let $n$ be a positive integer and let $A$ be a set of positive integers. We have\n(a)  \\[ \\sum_{n=1}^{\\infty}N^p_A(n)x^n=\\left(\\prod_{a\\in A}\\frac{1}{1-x^a}\\right)\\left(\\sum_{b\\in A}\\frac{x^b}{1-x^b}\\right), \\]\n(b)  \\[ N^p_A(n)=\\sum_{k=0}^{n-1}p_A(k)\\tau_A(n-k), \\]\n(c)  \\[ \\sum_{n=1}^{\\infty}N^q_A(n)x^n=\\left(\\prod_{a\\in A}(1+x^a)\\right)\\left(\\sum_{b\\in A}\\frac{x^b}{1+x^b}\\right), \\]\n(d)  \\[ N^q_A(n)=\\sum_{k=0}^{n-1}q_A(k)\\tau_A^s(n-k). \\]",
+  "generated_proof": "### Proof Sketch\n- Work in the ring of formal power series, where infinite products like ∏a∈A(1−x^a)±1 are well-defined because coefficients up to x^n depend only on factors with a≤n.\n- For ordinary partitions with parts from A, let N_b^p(n) count how many b-parts occur among all such partitions of n. A bijection shows that partitions of n with exactly k copies of b correspond to partitions of n−kb with parts in A∖{b}, hence N_b^p(n)=∑_{k≥1}k·p_{A∖{b}}(n−kb).\n- Summing over n produces the generating function for N_b^p, which after algebra simplifies to P_A(x)·x^b/(1−x^b). Summing over b∈A gives (a). Coefficient extraction yields the convolution in (b) using τ_A(x)=∑_{b∈A}x^b/(1−x^b)=∑_{m≥1}τ_A(m)x^m.\n- For distinct partitions, the number of b-parts across all distinct partitions equals the number of distinct partitions that contain b. The generating function for these is x^b∏_{a≠b}(1+x^a)=Q_A(x)·x^b/(1+x^b). Summing over b∈A yields (c). Coefficient extraction again gives (d) with τ_A^s(x)=∑_{b∈A}x^b/(1+x^b)=∑_{m≥1}τ_A^s(m)x^m.\n\n### Proof\nWe work throughout in the ring of formal power series in x. For an arbitrary subset A⊆ℕ, the infinite products\nP_A(x)=∏_{a∈A}(1−x^a)^{-1} and Q_A(x)=∏_{a∈A}(1+x^a)\nare well-defined as formal series because, for any fixed n, the coefficient of x^n depends only on factors with a≤n, hence on a finite product.\n\nDefine N_A^p(n) (resp. N_A^q(n)) as in Definition 20: the total number of parts over all partitions (resp. distinct partitions) of n with parts in A.\n\n(a) The ordinary-partition generating function. Fix b∈A and let N_b^p(n) be the total number of parts equal to b among all partitions of n with parts in A. Then\nN_A^p(n)=∑_{b∈A}N_b^p(n), for each n≥1.\nWe relate N_b^p(n) to partitions without the part b. For k≥1, deleting the k copies of b from a partition of n in which b appears exactly k times yields a partition of n−kb with parts in A∖{b}, and conversely any partition in P_{A∖{b}}(n−kb) becomes a partition of n with exactly k copies of b after appending k b’s. This is a bijection. Therefore\nN_b^p(n)=∑_{k≥1}k·p_{A∖{b}}(n−kb).\nPassing to generating functions and writing P_{A∖{b}}(x)=∑_{m≥0}p_{A∖{b}}(m)x^m, we get\n∑_{n≥1}N_b^p(n)x^n\n=∑_{k≥1}k x^{kb} ∑_{m≥0}p_{A∖{b}}(m)x^m\n=P_{A∖{b}}(x)·∑_{k≥1}k(x^b)^k\n=P_{A∖{b}}(x)· x^b/(1−x^b)^2.\nSince P_A(x)=P_{A∖{b}}(x)·(1−x^b)^{-1}, this equals P_A(x)· x^b/(1−x^b). Summing over b∈A and interchanging sums (which is legitimate coefficientwise because for fixed n only finitely many b≤n contribute), we find\n∑_{n≥1}N_A^p(n)x^n\n=∑_{b∈A}∑_{n≥1}N_b^p(n)x^n\n=∑_{b∈A} P_A(x)· x^b/(1−x^b)\n=P_A(x)·∑_{b∈A} x^b/(1−x^b),\nwhich is exactly\n∑_{n=1}^{∞}N_A^p(n)x^n\n= (∏_{a∈A} (1−x^a)^{-1}) · (∑_{b∈A} x^b/(1−x^b)).\nThis proves (a).\n\n(b) The convolution for ordinary partitions. Write the two factors on the right-hand side of (a) as\nP_A(x)=∑_{k≥0} p_A(k) x^k, and\nτ_A(x):=∑_{b∈A} x^b/(1−x^b)=∑_{m≥1} τ_A(m) x^m,\nwhere τ_A(m)=∑_{a|m, a∈A} 1 by expanding x^b/(1−x^b)=∑_{t≥1} x^{tb} and collecting like powers. Then\n∑_{n≥1} N_A^p(n) x^n = (∑_{k≥0} p_A(k) x^k)(∑_{m≥1} τ_A(m) x^m)\n= ∑_{n≥1} (∑_{k=0}^{n} p_A(k) τ_A(n−k)) x^n.\nSince τ_A(0)=0, the term k=n vanishes; hence for n≥1 we have\nN_A^p(n)=∑_{k=0}^{n-1} p_A(k) τ_A(n−k),\nwhich is (b).\n\n(c) The distinct-partition generating function. For fixed b∈A, the number of b-parts among all distinct partitions of n equals the number of distinct partitions of n that contain b (since a part may occur at most once). The ordinary generating function for distinct partitions that contain b is obtained by forcing b to appear (contributing x^b) and allowing each other part a∈A∖{b} to appear at most once (contributing a factor 1+x^a). Thus\n∑_{n≥0} N_b^q(n) x^n = x^b ∏_{a∈A∖{b}} (1+x^a)\n= (∏_{a∈A} (1+x^a)) · x^b/(1+x^b)\n= Q_A(x) · x^b/(1+x^b).\nSumming over b∈A and interchanging sums coefficientwise as before yields\n∑_{n≥1} N_A^q(n) x^n\n= Q_A(x) · ∑_{b∈A} x^b/(1+x^b),\ni.e.\n∑_{n=1}^{∞} N_A^q(n) x^n\n= (∏_{a∈A} (1+x^a)) · (∑_{b∈A} x^b/(1+x^b)),\nwhich is (c).\n\n(d) The convolution for distinct partitions. Expand the two factors in (c) as\nQ_A(x)=∑_{k≥0} q_A(k) x^k, and\nτ_A^s(x):=∑_{b∈A} x^b/(1+x^b)\n= ∑_{b∈A} ∑_{t≥1} (−1)^{t−1} x^{tb}\n= ∑_{m≥1} τ_A^s(m) x^m,\nwhere τ_A^s(m)=∑_{a|m, a∈A} (−1)^{m/a−1} by collecting coefficients. Multiplying gives\n∑_{n≥1} N_A^q(n) x^n = (∑_{k≥0} q_A(k) x^k)(∑_{m≥1} τ_A^s(m) x^m)\n= ∑_{n≥1} (∑_{k=0}^{n} q_A(k) τ_A^s(n−k)) x^n.\nSince τ_A^s(0)=0, the inner sum may be cut at k=n−1, and we obtain for n≥1\nN_A^q(n)=∑_{k=0}^{n-1} q_A(k) τ_A^s(n−k),\nwhich is (d).\n\nAll four parts are proved. ∎",
+  "proof_char_len": 4558,
+  "proof_sections": null,
+  "model_used": "gpt-5",
+  "generation_time": 156.97993516921997,
+  "success": true,
+  "error_message": null,
+  "token_count": 14406,
+  "generated_at": "2025-10-01T10:08:52.175264",
+  "quality": {
+    "math_balance_ok": true,
+    "structure_markers": 3,
+    "conclusion_symbol": true,
+    "word_count": 649,
+    "length_category": "long",
+    "lemma_ref_count": 0,
+    "theorem_overlap_ratio": 0.625,
+    "aggregate_score": 4,
+    "sketch_char_len": 0,
+    "full_proof_char_len": 1025,
+    "has_split_proof_sections": true,
+    "prompt_char_len": 24186,
+    "context_char_len": 21147,
+    "provenance": {
+      "sections": [
+        {
+          "title": "Motivation and Basic Definitions",
+          "original_chars": 5551,
+          "included_chars": 1503,
+          "truncated": true
+        },
+        {
+          "title": " Generating Functions for $N_A^p(n)$ and $N_A^q(n)$, and Six ways to Convolution and Recurrence Identities",
+          "original_chars": 0,
+          "included_chars": 0,
+          "truncated": false
+        },
+        {
+          "title": " Derivation with a Direct Application",
+          "original_chars": 5808,
+          "included_chars": 1503,
+          "truncated": true
+        },
+        {
+          "title": " Inversion",
+          "original_chars": 3797,
+          "included_chars": 1503,
+          "truncated": true
+        },
+        {
+          "title": " Product with $\\prod_{n=1",
+          "original_chars": 1948,
+          "included_chars": 1503,
+          "truncated": true
+        },
+        {
+          "title": " Logarithmic Differentiation",
+          "original_chars": 2817,
+          "included_chars": 1503,
+          "truncated": true
+        },
+        {
+          "title": " Recurrence Identities over $A$",
+          "original_chars": 2008,
+          "included_chars": 1503,
+          "truncated": true
+        },
+        {
+          "title": " Interplay with Carlitz Compositions",
+          "original_chars": 2636,
+          "included_chars": 1503,
+          "truncated": true
+        },
+        {
+          "title": " Asymptotic Estimate of $N_A^p(n)$ when $A$ is a Finite Set",
+          "original_chars": 16062,
+          "included_chars": 1503,
+          "truncated": true
+        }
+      ],
+      "available_theorems_count": 21,
+      "target_theorem_index": 0,
+      "truncated_context": false,
+      "context_char_limit": 50000,
+      "rag": {
+        "enabled": false
+      }
+    },
+    "structural": {
+      "symbol_total": 159,
+      "symbol_introduced": 38,
+      "symbol_undefined": [
+        "Al",
+        "Co",
+        "De",
+        "Ex",
+        "Fi",
+        "Fo",
+        "Mu",
+        "P",
+        "Pa",
+        "Pr",
+        "Q",
+        "Si",
+        "Sk",
+        "Su",
+        "Th",
+        "Wo",
+        "Wr",
+        "af",
+        "ag",
+        "ai"
+      ],
+      "symbol_undefined_count": 154,
+      "lemma_ref_count": 0,
+      "lemma_missing": [],
+      "lemma_missing_count": 0,
+      "hallucination_risk_level": "medium"
+    }
+  },
+  "variant": "baseline",
+  "input_tokens": 9131,
+  "output_tokens": 5275
+}

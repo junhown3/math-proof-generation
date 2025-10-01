@@ -1,0 +1,1619 @@
+{
+  "paper_id": "2509.22618",
+  "total_theorems": 22,
+  "successful_proofs": 0,
+  "failed_proofs": 22,
+  "success_rate": 0.0,
+  "total_time": 6.574066638946533,
+  "total_tokens": 0,
+  "model_used": "unknown",
+  "generated_at": "2025-09-30T16:59:57.754834",
+  "results": [
+    {
+      "theorem_index": 0,
+      "success": false,
+      "generation_time": 1.619826316833496,
+      "token_count": 0,
+      "error": "Error: OpenAI API request failed: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'temperature' is not supported with this model.\", 'type': 'invalid_request_error', 'param': 'temperature', 'code': None}}\nRemove extra parameters; try minimal call with only model and input.",
+      "quality": {
+        "prompt_char_len": 24621,
+        "context_char_len": 22381,
+        "provenance": {
+          "sections": [
+            {
+              "title": "Motivation and Basic Definitions",
+              "original_chars": 5551,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Generating Functions for $N_A^p(n)$ and $N_A^q(n)$, and Six ways to Convolution and Recurrence Identities",
+              "original_chars": 0,
+              "included_chars": 0,
+              "truncated": false
+            },
+            {
+              "title": " Derivation with a Direct Application",
+              "original_chars": 5808,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Inversion",
+              "original_chars": 3797,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Product with $\\prod_{n=1",
+              "original_chars": 1948,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Logarithmic Differentiation",
+              "original_chars": 2817,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Recurrence Identities over $A$",
+              "original_chars": 2008,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Interplay with Carlitz Compositions",
+              "original_chars": 2636,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Asymptotic Estimate of $N_A^p(n)$ when $A$ is a Finite Set",
+              "original_chars": 16062,
+              "included_chars": 1503,
+              "truncated": true
+            }
+          ],
+          "available_theorems_count": 21,
+          "target_theorem_index": 0,
+          "truncated_context": false,
+          "context_char_limit": 50000
+        }
+      }
+    },
+    {
+      "theorem_index": 1,
+      "success": false,
+      "generation_time": 0.13100624084472656,
+      "token_count": 0,
+      "error": "Error: OpenAI API request failed: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'temperature' is not supported with this model.\", 'type': 'invalid_request_error', 'param': 'temperature', 'code': None}}\nRemove extra parameters; try minimal call with only model and input.",
+      "quality": {
+        "prompt_char_len": 24621,
+        "context_char_len": 22649,
+        "provenance": {
+          "sections": [
+            {
+              "title": "Motivation and Basic Definitions",
+              "original_chars": 5551,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Generating Functions for $N_A^p(n)$ and $N_A^q(n)$, and Six ways to Convolution and Recurrence Identities",
+              "original_chars": 0,
+              "included_chars": 0,
+              "truncated": false
+            },
+            {
+              "title": " Derivation with a Direct Application",
+              "original_chars": 5808,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Inversion",
+              "original_chars": 3797,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Product with $\\prod_{n=1",
+              "original_chars": 1948,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Logarithmic Differentiation",
+              "original_chars": 2817,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Recurrence Identities over $A$",
+              "original_chars": 2008,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Interplay with Carlitz Compositions",
+              "original_chars": 2636,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Asymptotic Estimate of $N_A^p(n)$ when $A$ is a Finite Set",
+              "original_chars": 16062,
+              "included_chars": 1503,
+              "truncated": true
+            }
+          ],
+          "available_theorems_count": 21,
+          "target_theorem_index": 1,
+          "truncated_context": false,
+          "context_char_limit": 50000
+        }
+      }
+    },
+    {
+      "theorem_index": 2,
+      "success": false,
+      "generation_time": 0.744013786315918,
+      "token_count": 0,
+      "error": "Error: OpenAI API request failed: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'temperature' is not supported with this model.\", 'type': 'invalid_request_error', 'param': 'temperature', 'code': None}}\nRemove extra parameters; try minimal call with only model and input.",
+      "quality": {
+        "prompt_char_len": 24621,
+        "context_char_len": 22619,
+        "provenance": {
+          "sections": [
+            {
+              "title": "Motivation and Basic Definitions",
+              "original_chars": 5551,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Generating Functions for $N_A^p(n)$ and $N_A^q(n)$, and Six ways to Convolution and Recurrence Identities",
+              "original_chars": 0,
+              "included_chars": 0,
+              "truncated": false
+            },
+            {
+              "title": " Derivation with a Direct Application",
+              "original_chars": 5808,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Inversion",
+              "original_chars": 3797,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Product with $\\prod_{n=1",
+              "original_chars": 1948,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Logarithmic Differentiation",
+              "original_chars": 2817,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Recurrence Identities over $A$",
+              "original_chars": 2008,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Interplay with Carlitz Compositions",
+              "original_chars": 2636,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Asymptotic Estimate of $N_A^p(n)$ when $A$ is a Finite Set",
+              "original_chars": 16062,
+              "included_chars": 1503,
+              "truncated": true
+            }
+          ],
+          "available_theorems_count": 21,
+          "target_theorem_index": 2,
+          "truncated_context": false,
+          "context_char_limit": 50000
+        }
+      }
+    },
+    {
+      "theorem_index": 3,
+      "success": false,
+      "generation_time": 0.46019458770751953,
+      "token_count": 0,
+      "error": "Error: OpenAI API request failed: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'temperature' is not supported with this model.\", 'type': 'invalid_request_error', 'param': 'temperature', 'code': None}}\nRemove extra parameters; try minimal call with only model and input.",
+      "quality": {
+        "prompt_char_len": 24621,
+        "context_char_len": 22690,
+        "provenance": {
+          "sections": [
+            {
+              "title": "Motivation and Basic Definitions",
+              "original_chars": 5551,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Generating Functions for $N_A^p(n)$ and $N_A^q(n)$, and Six ways to Convolution and Recurrence Identities",
+              "original_chars": 0,
+              "included_chars": 0,
+              "truncated": false
+            },
+            {
+              "title": " Derivation with a Direct Application",
+              "original_chars": 5808,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Inversion",
+              "original_chars": 3797,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Product with $\\prod_{n=1",
+              "original_chars": 1948,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Logarithmic Differentiation",
+              "original_chars": 2817,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Recurrence Identities over $A$",
+              "original_chars": 2008,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Interplay with Carlitz Compositions",
+              "original_chars": 2636,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Asymptotic Estimate of $N_A^p(n)$ when $A$ is a Finite Set",
+              "original_chars": 16062,
+              "included_chars": 1503,
+              "truncated": true
+            }
+          ],
+          "available_theorems_count": 21,
+          "target_theorem_index": 3,
+          "truncated_context": false,
+          "context_char_limit": 50000
+        }
+      }
+    },
+    {
+      "theorem_index": 4,
+      "success": false,
+      "generation_time": 0.08295249938964844,
+      "token_count": 0,
+      "error": "Error: OpenAI API request failed: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'temperature' is not supported with this model.\", 'type': 'invalid_request_error', 'param': 'temperature', 'code': None}}\nRemove extra parameters; try minimal call with only model and input.",
+      "quality": {
+        "prompt_char_len": 24621,
+        "context_char_len": 22792,
+        "provenance": {
+          "sections": [
+            {
+              "title": "Motivation and Basic Definitions",
+              "original_chars": 5551,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Generating Functions for $N_A^p(n)$ and $N_A^q(n)$, and Six ways to Convolution and Recurrence Identities",
+              "original_chars": 0,
+              "included_chars": 0,
+              "truncated": false
+            },
+            {
+              "title": " Derivation with a Direct Application",
+              "original_chars": 5808,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Inversion",
+              "original_chars": 3797,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Product with $\\prod_{n=1",
+              "original_chars": 1948,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Logarithmic Differentiation",
+              "original_chars": 2817,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Recurrence Identities over $A$",
+              "original_chars": 2008,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Interplay with Carlitz Compositions",
+              "original_chars": 2636,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Asymptotic Estimate of $N_A^p(n)$ when $A$ is a Finite Set",
+              "original_chars": 16062,
+              "included_chars": 1503,
+              "truncated": true
+            }
+          ],
+          "available_theorems_count": 21,
+          "target_theorem_index": 4,
+          "truncated_context": false,
+          "context_char_limit": 50000
+        }
+      }
+    },
+    {
+      "theorem_index": 5,
+      "success": false,
+      "generation_time": 0.8839011192321777,
+      "token_count": 0,
+      "error": "Error: OpenAI API request failed: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'temperature' is not supported with this model.\", 'type': 'invalid_request_error', 'param': 'temperature', 'code': None}}\nRemove extra parameters; try minimal call with only model and input.",
+      "quality": {
+        "prompt_char_len": 24621,
+        "context_char_len": 22749,
+        "provenance": {
+          "sections": [
+            {
+              "title": "Motivation and Basic Definitions",
+              "original_chars": 5551,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Generating Functions for $N_A^p(n)$ and $N_A^q(n)$, and Six ways to Convolution and Recurrence Identities",
+              "original_chars": 0,
+              "included_chars": 0,
+              "truncated": false
+            },
+            {
+              "title": " Derivation with a Direct Application",
+              "original_chars": 5808,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Inversion",
+              "original_chars": 3797,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Product with $\\prod_{n=1",
+              "original_chars": 1948,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Logarithmic Differentiation",
+              "original_chars": 2817,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Recurrence Identities over $A$",
+              "original_chars": 2008,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Interplay with Carlitz Compositions",
+              "original_chars": 2636,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Asymptotic Estimate of $N_A^p(n)$ when $A$ is a Finite Set",
+              "original_chars": 16062,
+              "included_chars": 1503,
+              "truncated": true
+            }
+          ],
+          "available_theorems_count": 21,
+          "target_theorem_index": 5,
+          "truncated_context": false,
+          "context_char_limit": 50000
+        }
+      }
+    },
+    {
+      "theorem_index": 6,
+      "success": false,
+      "generation_time": 0.21222662925720215,
+      "token_count": 0,
+      "error": "Error: OpenAI API request failed: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'temperature' is not supported with this model.\", 'type': 'invalid_request_error', 'param': 'temperature', 'code': None}}\nRemove extra parameters; try minimal call with only model and input.",
+      "quality": {
+        "prompt_char_len": 24621,
+        "context_char_len": 22663,
+        "provenance": {
+          "sections": [
+            {
+              "title": "Motivation and Basic Definitions",
+              "original_chars": 5551,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Generating Functions for $N_A^p(n)$ and $N_A^q(n)$, and Six ways to Convolution and Recurrence Identities",
+              "original_chars": 0,
+              "included_chars": 0,
+              "truncated": false
+            },
+            {
+              "title": " Derivation with a Direct Application",
+              "original_chars": 5808,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Inversion",
+              "original_chars": 3797,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Product with $\\prod_{n=1",
+              "original_chars": 1948,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Logarithmic Differentiation",
+              "original_chars": 2817,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Recurrence Identities over $A$",
+              "original_chars": 2008,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Interplay with Carlitz Compositions",
+              "original_chars": 2636,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Asymptotic Estimate of $N_A^p(n)$ when $A$ is a Finite Set",
+              "original_chars": 16062,
+              "included_chars": 1503,
+              "truncated": true
+            }
+          ],
+          "available_theorems_count": 21,
+          "target_theorem_index": 6,
+          "truncated_context": false,
+          "context_char_limit": 50000
+        }
+      }
+    },
+    {
+      "theorem_index": 7,
+      "success": false,
+      "generation_time": 0.15800213813781738,
+      "token_count": 0,
+      "error": "Error: OpenAI API request failed: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'temperature' is not supported with this model.\", 'type': 'invalid_request_error', 'param': 'temperature', 'code': None}}\nRemove extra parameters; try minimal call with only model and input.",
+      "quality": {
+        "prompt_char_len": 24621,
+        "context_char_len": 22760,
+        "provenance": {
+          "sections": [
+            {
+              "title": "Motivation and Basic Definitions",
+              "original_chars": 5551,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Generating Functions for $N_A^p(n)$ and $N_A^q(n)$, and Six ways to Convolution and Recurrence Identities",
+              "original_chars": 0,
+              "included_chars": 0,
+              "truncated": false
+            },
+            {
+              "title": " Derivation with a Direct Application",
+              "original_chars": 5808,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Inversion",
+              "original_chars": 3797,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Product with $\\prod_{n=1",
+              "original_chars": 1948,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Logarithmic Differentiation",
+              "original_chars": 2817,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Recurrence Identities over $A$",
+              "original_chars": 2008,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Interplay with Carlitz Compositions",
+              "original_chars": 2636,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Asymptotic Estimate of $N_A^p(n)$ when $A$ is a Finite Set",
+              "original_chars": 16062,
+              "included_chars": 1503,
+              "truncated": true
+            }
+          ],
+          "available_theorems_count": 21,
+          "target_theorem_index": 7,
+          "truncated_context": false,
+          "context_char_limit": 50000
+        }
+      }
+    },
+    {
+      "theorem_index": 8,
+      "success": false,
+      "generation_time": 0.16200017929077148,
+      "token_count": 0,
+      "error": "Error: OpenAI API request failed: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'temperature' is not supported with this model.\", 'type': 'invalid_request_error', 'param': 'temperature', 'code': None}}\nRemove extra parameters; try minimal call with only model and input.",
+      "quality": {
+        "prompt_char_len": 24614,
+        "context_char_len": 22672,
+        "provenance": {
+          "sections": [
+            {
+              "title": "Motivation and Basic Definitions",
+              "original_chars": 5551,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Generating Functions for $N_A^p(n)$ and $N_A^q(n)$, and Six ways to Convolution and Recurrence Identities",
+              "original_chars": 0,
+              "included_chars": 0,
+              "truncated": false
+            },
+            {
+              "title": " Derivation with a Direct Application",
+              "original_chars": 5808,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Inversion",
+              "original_chars": 3797,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Product with $\\prod_{n=1",
+              "original_chars": 1948,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Logarithmic Differentiation",
+              "original_chars": 2817,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Recurrence Identities over $A$",
+              "original_chars": 2008,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Interplay with Carlitz Compositions",
+              "original_chars": 2636,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Asymptotic Estimate of $N_A^p(n)$ when $A$ is a Finite Set",
+              "original_chars": 16062,
+              "included_chars": 1503,
+              "truncated": true
+            }
+          ],
+          "available_theorems_count": 21,
+          "target_theorem_index": 8,
+          "truncated_context": false,
+          "context_char_limit": 50000
+        }
+      }
+    },
+    {
+      "theorem_index": 9,
+      "success": false,
+      "generation_time": 0.11399674415588379,
+      "token_count": 0,
+      "error": "Error: OpenAI API request failed: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'temperature' is not supported with this model.\", 'type': 'invalid_request_error', 'param': 'temperature', 'code': None}}\nRemove extra parameters; try minimal call with only model and input.",
+      "quality": {
+        "prompt_char_len": 24517,
+        "context_char_len": 22515,
+        "provenance": {
+          "sections": [
+            {
+              "title": "Motivation and Basic Definitions",
+              "original_chars": 5551,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Generating Functions for $N_A^p(n)$ and $N_A^q(n)$, and Six ways to Convolution and Recurrence Identities",
+              "original_chars": 0,
+              "included_chars": 0,
+              "truncated": false
+            },
+            {
+              "title": " Derivation with a Direct Application",
+              "original_chars": 5808,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Inversion",
+              "original_chars": 3797,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Product with $\\prod_{n=1",
+              "original_chars": 1948,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Logarithmic Differentiation",
+              "original_chars": 2817,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Recurrence Identities over $A$",
+              "original_chars": 2008,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Interplay with Carlitz Compositions",
+              "original_chars": 2636,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Asymptotic Estimate of $N_A^p(n)$ when $A$ is a Finite Set",
+              "original_chars": 16062,
+              "included_chars": 1503,
+              "truncated": true
+            }
+          ],
+          "available_theorems_count": 21,
+          "target_theorem_index": 9,
+          "truncated_context": false,
+          "context_char_limit": 50000
+        }
+      }
+    },
+    {
+      "theorem_index": 10,
+      "success": false,
+      "generation_time": 0.10500240325927734,
+      "token_count": 0,
+      "error": "Error: OpenAI API request failed: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'temperature' is not supported with this model.\", 'type': 'invalid_request_error', 'param': 'temperature', 'code': None}}\nRemove extra parameters; try minimal call with only model and input.",
+      "quality": {
+        "prompt_char_len": 24517,
+        "context_char_len": 22788,
+        "provenance": {
+          "sections": [
+            {
+              "title": "Motivation and Basic Definitions",
+              "original_chars": 5551,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Generating Functions for $N_A^p(n)$ and $N_A^q(n)$, and Six ways to Convolution and Recurrence Identities",
+              "original_chars": 0,
+              "included_chars": 0,
+              "truncated": false
+            },
+            {
+              "title": " Derivation with a Direct Application",
+              "original_chars": 5808,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Inversion",
+              "original_chars": 3797,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Product with $\\prod_{n=1",
+              "original_chars": 1948,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Logarithmic Differentiation",
+              "original_chars": 2817,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Recurrence Identities over $A$",
+              "original_chars": 2008,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Interplay with Carlitz Compositions",
+              "original_chars": 2636,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Asymptotic Estimate of $N_A^p(n)$ when $A$ is a Finite Set",
+              "original_chars": 16062,
+              "included_chars": 1503,
+              "truncated": true
+            }
+          ],
+          "available_theorems_count": 21,
+          "target_theorem_index": 10,
+          "truncated_context": false,
+          "context_char_limit": 50000
+        }
+      }
+    },
+    {
+      "theorem_index": 11,
+      "success": false,
+      "generation_time": 0.12600302696228027,
+      "token_count": 0,
+      "error": "Error: OpenAI API request failed: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'temperature' is not supported with this model.\", 'type': 'invalid_request_error', 'param': 'temperature', 'code': None}}\nRemove extra parameters; try minimal call with only model and input.",
+      "quality": {
+        "prompt_char_len": 24517,
+        "context_char_len": 22836,
+        "provenance": {
+          "sections": [
+            {
+              "title": "Motivation and Basic Definitions",
+              "original_chars": 5551,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Generating Functions for $N_A^p(n)$ and $N_A^q(n)$, and Six ways to Convolution and Recurrence Identities",
+              "original_chars": 0,
+              "included_chars": 0,
+              "truncated": false
+            },
+            {
+              "title": " Derivation with a Direct Application",
+              "original_chars": 5808,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Inversion",
+              "original_chars": 3797,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Product with $\\prod_{n=1",
+              "original_chars": 1948,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Logarithmic Differentiation",
+              "original_chars": 2817,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Recurrence Identities over $A$",
+              "original_chars": 2008,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Interplay with Carlitz Compositions",
+              "original_chars": 2636,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Asymptotic Estimate of $N_A^p(n)$ when $A$ is a Finite Set",
+              "original_chars": 16062,
+              "included_chars": 1503,
+              "truncated": true
+            }
+          ],
+          "available_theorems_count": 21,
+          "target_theorem_index": 11,
+          "truncated_context": false,
+          "context_char_limit": 50000
+        }
+      }
+    },
+    {
+      "theorem_index": 12,
+      "success": false,
+      "generation_time": 0.4558095932006836,
+      "token_count": 0,
+      "error": "Error: OpenAI API request failed: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'temperature' is not supported with this model.\", 'type': 'invalid_request_error', 'param': 'temperature', 'code': None}}\nRemove extra parameters; try minimal call with only model and input.",
+      "quality": {
+        "prompt_char_len": 24517,
+        "context_char_len": 22894,
+        "provenance": {
+          "sections": [
+            {
+              "title": "Motivation and Basic Definitions",
+              "original_chars": 5551,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Generating Functions for $N_A^p(n)$ and $N_A^q(n)$, and Six ways to Convolution and Recurrence Identities",
+              "original_chars": 0,
+              "included_chars": 0,
+              "truncated": false
+            },
+            {
+              "title": " Derivation with a Direct Application",
+              "original_chars": 5808,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Inversion",
+              "original_chars": 3797,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Product with $\\prod_{n=1",
+              "original_chars": 1948,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Logarithmic Differentiation",
+              "original_chars": 2817,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Recurrence Identities over $A$",
+              "original_chars": 2008,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Interplay with Carlitz Compositions",
+              "original_chars": 2636,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Asymptotic Estimate of $N_A^p(n)$ when $A$ is a Finite Set",
+              "original_chars": 16062,
+              "included_chars": 1503,
+              "truncated": true
+            }
+          ],
+          "available_theorems_count": 21,
+          "target_theorem_index": 12,
+          "truncated_context": false,
+          "context_char_limit": 50000
+        }
+      }
+    },
+    {
+      "theorem_index": 13,
+      "success": false,
+      "generation_time": 0.10844683647155762,
+      "token_count": 0,
+      "error": "Error: OpenAI API request failed: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'temperature' is not supported with this model.\", 'type': 'invalid_request_error', 'param': 'temperature', 'code': None}}\nRemove extra parameters; try minimal call with only model and input.",
+      "quality": {
+        "prompt_char_len": 24517,
+        "context_char_len": 22624,
+        "provenance": {
+          "sections": [
+            {
+              "title": "Motivation and Basic Definitions",
+              "original_chars": 5551,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Generating Functions for $N_A^p(n)$ and $N_A^q(n)$, and Six ways to Convolution and Recurrence Identities",
+              "original_chars": 0,
+              "included_chars": 0,
+              "truncated": false
+            },
+            {
+              "title": " Derivation with a Direct Application",
+              "original_chars": 5808,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Inversion",
+              "original_chars": 3797,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Product with $\\prod_{n=1",
+              "original_chars": 1948,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Logarithmic Differentiation",
+              "original_chars": 2817,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Recurrence Identities over $A$",
+              "original_chars": 2008,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Interplay with Carlitz Compositions",
+              "original_chars": 2636,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Asymptotic Estimate of $N_A^p(n)$ when $A$ is a Finite Set",
+              "original_chars": 16062,
+              "included_chars": 1503,
+              "truncated": true
+            }
+          ],
+          "available_theorems_count": 21,
+          "target_theorem_index": 13,
+          "truncated_context": false,
+          "context_char_limit": 50000
+        }
+      }
+    },
+    {
+      "theorem_index": 14,
+      "success": false,
+      "generation_time": 0.11300826072692871,
+      "token_count": 0,
+      "error": "Error: OpenAI API request failed: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'temperature' is not supported with this model.\", 'type': 'invalid_request_error', 'param': 'temperature', 'code': None}}\nRemove extra parameters; try minimal call with only model and input.",
+      "quality": {
+        "prompt_char_len": 24517,
+        "context_char_len": 22845,
+        "provenance": {
+          "sections": [
+            {
+              "title": "Motivation and Basic Definitions",
+              "original_chars": 5551,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Generating Functions for $N_A^p(n)$ and $N_A^q(n)$, and Six ways to Convolution and Recurrence Identities",
+              "original_chars": 0,
+              "included_chars": 0,
+              "truncated": false
+            },
+            {
+              "title": " Derivation with a Direct Application",
+              "original_chars": 5808,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Inversion",
+              "original_chars": 3797,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Product with $\\prod_{n=1",
+              "original_chars": 1948,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Logarithmic Differentiation",
+              "original_chars": 2817,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Recurrence Identities over $A$",
+              "original_chars": 2008,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Interplay with Carlitz Compositions",
+              "original_chars": 2636,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Asymptotic Estimate of $N_A^p(n)$ when $A$ is a Finite Set",
+              "original_chars": 16062,
+              "included_chars": 1503,
+              "truncated": true
+            }
+          ],
+          "available_theorems_count": 21,
+          "target_theorem_index": 14,
+          "truncated_context": false,
+          "context_char_limit": 50000
+        }
+      }
+    },
+    {
+      "theorem_index": 15,
+      "success": false,
+      "generation_time": 0.09079980850219727,
+      "token_count": 0,
+      "error": "Error: OpenAI API request failed: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'temperature' is not supported with this model.\", 'type': 'invalid_request_error', 'param': 'temperature', 'code': None}}\nRemove extra parameters; try minimal call with only model and input.",
+      "quality": {
+        "prompt_char_len": 24517,
+        "context_char_len": 22817,
+        "provenance": {
+          "sections": [
+            {
+              "title": "Motivation and Basic Definitions",
+              "original_chars": 5551,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Generating Functions for $N_A^p(n)$ and $N_A^q(n)$, and Six ways to Convolution and Recurrence Identities",
+              "original_chars": 0,
+              "included_chars": 0,
+              "truncated": false
+            },
+            {
+              "title": " Derivation with a Direct Application",
+              "original_chars": 5808,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Inversion",
+              "original_chars": 3797,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Product with $\\prod_{n=1",
+              "original_chars": 1948,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Logarithmic Differentiation",
+              "original_chars": 2817,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Recurrence Identities over $A$",
+              "original_chars": 2008,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Interplay with Carlitz Compositions",
+              "original_chars": 2636,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Asymptotic Estimate of $N_A^p(n)$ when $A$ is a Finite Set",
+              "original_chars": 16062,
+              "included_chars": 1503,
+              "truncated": true
+            }
+          ],
+          "available_theorems_count": 21,
+          "target_theorem_index": 15,
+          "truncated_context": false,
+          "context_char_limit": 50000
+        }
+      }
+    },
+    {
+      "theorem_index": 16,
+      "success": false,
+      "generation_time": 0.11148571968078613,
+      "token_count": 0,
+      "error": "Error: OpenAI API request failed: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'temperature' is not supported with this model.\", 'type': 'invalid_request_error', 'param': 'temperature', 'code': None}}\nRemove extra parameters; try minimal call with only model and input.",
+      "quality": {
+        "prompt_char_len": 24517,
+        "context_char_len": 22778,
+        "provenance": {
+          "sections": [
+            {
+              "title": "Motivation and Basic Definitions",
+              "original_chars": 5551,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Generating Functions for $N_A^p(n)$ and $N_A^q(n)$, and Six ways to Convolution and Recurrence Identities",
+              "original_chars": 0,
+              "included_chars": 0,
+              "truncated": false
+            },
+            {
+              "title": " Derivation with a Direct Application",
+              "original_chars": 5808,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Inversion",
+              "original_chars": 3797,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Product with $\\prod_{n=1",
+              "original_chars": 1948,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Logarithmic Differentiation",
+              "original_chars": 2817,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Recurrence Identities over $A$",
+              "original_chars": 2008,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Interplay with Carlitz Compositions",
+              "original_chars": 2636,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Asymptotic Estimate of $N_A^p(n)$ when $A$ is a Finite Set",
+              "original_chars": 16062,
+              "included_chars": 1503,
+              "truncated": true
+            }
+          ],
+          "available_theorems_count": 21,
+          "target_theorem_index": 16,
+          "truncated_context": false,
+          "context_char_limit": 50000
+        }
+      }
+    },
+    {
+      "theorem_index": 17,
+      "success": false,
+      "generation_time": 0.37453174591064453,
+      "token_count": 0,
+      "error": "Error: OpenAI API request failed: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'temperature' is not supported with this model.\", 'type': 'invalid_request_error', 'param': 'temperature', 'code': None}}\nRemove extra parameters; try minimal call with only model and input.",
+      "quality": {
+        "prompt_char_len": 24517,
+        "context_char_len": 22561,
+        "provenance": {
+          "sections": [
+            {
+              "title": "Motivation and Basic Definitions",
+              "original_chars": 5551,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Generating Functions for $N_A^p(n)$ and $N_A^q(n)$, and Six ways to Convolution and Recurrence Identities",
+              "original_chars": 0,
+              "included_chars": 0,
+              "truncated": false
+            },
+            {
+              "title": " Derivation with a Direct Application",
+              "original_chars": 5808,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Inversion",
+              "original_chars": 3797,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Product with $\\prod_{n=1",
+              "original_chars": 1948,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Logarithmic Differentiation",
+              "original_chars": 2817,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Recurrence Identities over $A$",
+              "original_chars": 2008,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Interplay with Carlitz Compositions",
+              "original_chars": 2636,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Asymptotic Estimate of $N_A^p(n)$ when $A$ is a Finite Set",
+              "original_chars": 16062,
+              "included_chars": 1503,
+              "truncated": true
+            }
+          ],
+          "available_theorems_count": 21,
+          "target_theorem_index": 17,
+          "truncated_context": false,
+          "context_char_limit": 50000
+        }
+      }
+    },
+    {
+      "theorem_index": 18,
+      "success": false,
+      "generation_time": 0.11400270462036133,
+      "token_count": 0,
+      "error": "Error: OpenAI API request failed: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'temperature' is not supported with this model.\", 'type': 'invalid_request_error', 'param': 'temperature', 'code': None}}\nRemove extra parameters; try minimal call with only model and input.",
+      "quality": {
+        "prompt_char_len": 24517,
+        "context_char_len": 22691,
+        "provenance": {
+          "sections": [
+            {
+              "title": "Motivation and Basic Definitions",
+              "original_chars": 5551,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Generating Functions for $N_A^p(n)$ and $N_A^q(n)$, and Six ways to Convolution and Recurrence Identities",
+              "original_chars": 0,
+              "included_chars": 0,
+              "truncated": false
+            },
+            {
+              "title": " Derivation with a Direct Application",
+              "original_chars": 5808,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Inversion",
+              "original_chars": 3797,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Product with $\\prod_{n=1",
+              "original_chars": 1948,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Logarithmic Differentiation",
+              "original_chars": 2817,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Recurrence Identities over $A$",
+              "original_chars": 2008,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Interplay with Carlitz Compositions",
+              "original_chars": 2636,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Asymptotic Estimate of $N_A^p(n)$ when $A$ is a Finite Set",
+              "original_chars": 16062,
+              "included_chars": 1503,
+              "truncated": true
+            }
+          ],
+          "available_theorems_count": 21,
+          "target_theorem_index": 18,
+          "truncated_context": false,
+          "context_char_limit": 50000
+        }
+      }
+    },
+    {
+      "theorem_index": 19,
+      "success": false,
+      "generation_time": 0.1364142894744873,
+      "token_count": 0,
+      "error": "Error: OpenAI API request failed: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'temperature' is not supported with this model.\", 'type': 'invalid_request_error', 'param': 'temperature', 'code': None}}\nRemove extra parameters; try minimal call with only model and input.",
+      "quality": {
+        "prompt_char_len": 24517,
+        "context_char_len": 22195,
+        "provenance": {
+          "sections": [
+            {
+              "title": "Motivation and Basic Definitions",
+              "original_chars": 5551,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Generating Functions for $N_A^p(n)$ and $N_A^q(n)$, and Six ways to Convolution and Recurrence Identities",
+              "original_chars": 0,
+              "included_chars": 0,
+              "truncated": false
+            },
+            {
+              "title": " Derivation with a Direct Application",
+              "original_chars": 5808,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Inversion",
+              "original_chars": 3797,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Product with $\\prod_{n=1",
+              "original_chars": 1948,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Logarithmic Differentiation",
+              "original_chars": 2817,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Recurrence Identities over $A$",
+              "original_chars": 2008,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Interplay with Carlitz Compositions",
+              "original_chars": 2636,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Asymptotic Estimate of $N_A^p(n)$ when $A$ is a Finite Set",
+              "original_chars": 16062,
+              "included_chars": 1503,
+              "truncated": true
+            }
+          ],
+          "available_theorems_count": 21,
+          "target_theorem_index": 19,
+          "truncated_context": false,
+          "context_char_limit": 50000
+        }
+      }
+    },
+    {
+      "theorem_index": 20,
+      "success": false,
+      "generation_time": 0.15349817276000977,
+      "token_count": 0,
+      "error": "Error: OpenAI API request failed: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'temperature' is not supported with this model.\", 'type': 'invalid_request_error', 'param': 'temperature', 'code': None}}\nRemove extra parameters; try minimal call with only model and input.",
+      "quality": {
+        "prompt_char_len": 24517,
+        "context_char_len": 22632,
+        "provenance": {
+          "sections": [
+            {
+              "title": "Motivation and Basic Definitions",
+              "original_chars": 5551,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Generating Functions for $N_A^p(n)$ and $N_A^q(n)$, and Six ways to Convolution and Recurrence Identities",
+              "original_chars": 0,
+              "included_chars": 0,
+              "truncated": false
+            },
+            {
+              "title": " Derivation with a Direct Application",
+              "original_chars": 5808,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Inversion",
+              "original_chars": 3797,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Product with $\\prod_{n=1",
+              "original_chars": 1948,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Logarithmic Differentiation",
+              "original_chars": 2817,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Recurrence Identities over $A$",
+              "original_chars": 2008,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Interplay with Carlitz Compositions",
+              "original_chars": 2636,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Asymptotic Estimate of $N_A^p(n)$ when $A$ is a Finite Set",
+              "original_chars": 16062,
+              "included_chars": 1503,
+              "truncated": true
+            }
+          ],
+          "available_theorems_count": 21,
+          "target_theorem_index": 20,
+          "truncated_context": false,
+          "context_char_limit": 50000
+        }
+      }
+    },
+    {
+      "theorem_index": 21,
+      "success": false,
+      "generation_time": 0.1169438362121582,
+      "token_count": 0,
+      "error": "Error: OpenAI API request failed: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'temperature' is not supported with this model.\", 'type': 'invalid_request_error', 'param': 'temperature', 'code': None}}\nRemove extra parameters; try minimal call with only model and input.",
+      "quality": {
+        "prompt_char_len": 24517,
+        "context_char_len": 21646,
+        "provenance": {
+          "sections": [
+            {
+              "title": "Motivation and Basic Definitions",
+              "original_chars": 5551,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Generating Functions for $N_A^p(n)$ and $N_A^q(n)$, and Six ways to Convolution and Recurrence Identities",
+              "original_chars": 0,
+              "included_chars": 0,
+              "truncated": false
+            },
+            {
+              "title": " Derivation with a Direct Application",
+              "original_chars": 5808,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Inversion",
+              "original_chars": 3797,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Product with $\\prod_{n=1",
+              "original_chars": 1948,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Logarithmic Differentiation",
+              "original_chars": 2817,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Recurrence Identities over $A$",
+              "original_chars": 2008,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Interplay with Carlitz Compositions",
+              "original_chars": 2636,
+              "included_chars": 1503,
+              "truncated": true
+            },
+            {
+              "title": " Asymptotic Estimate of $N_A^p(n)$ when $A$ is a Finite Set",
+              "original_chars": 16062,
+              "included_chars": 1503,
+              "truncated": true
+            }
+          ],
+          "available_theorems_count": 21,
+          "target_theorem_index": 21,
+          "truncated_context": false,
+          "context_char_limit": 50000
+        }
+      }
+    }
+  ]
+}

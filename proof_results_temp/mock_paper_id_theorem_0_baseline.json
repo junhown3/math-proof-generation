@@ -1,0 +1,59 @@
+{
+  "paper_id": "mock_paper_id",
+  "theorem_index": 0,
+  "theorem_statement": "Let A be finite then |3A| \\ge c|A|^{1+\\delta}.",
+  "generated_proof": "**Proof**: We proceed by direct construction. Let $n$ be given as in the theorem statement.\n\nFirst, we establish the necessary conditions. By the fundamental properties of the mathematical objects involved, we can apply the standard techniques from the relevant theory.\n\nConsider the key observation that the statement follows from well-established results in this area. The construction can be made explicit by noting that the required properties are satisfied.\n\nTherefore, the theorem holds as claimed. ∎\n\n*Note: This is a mock proof generated for testing purposes.*",
+  "proof_char_len": 568,
+  "proof_sections": null,
+  "model_used": "mock-llm",
+  "generation_time": 0.0,
+  "success": true,
+  "error_message": null,
+  "token_count": 100,
+  "generated_at": "2025-10-01T02:20:50.537848",
+  "quality": {
+    "math_balance_ok": true,
+    "structure_markers": 1,
+    "conclusion_symbol": true,
+    "word_count": 85,
+    "length_category": "short",
+    "lemma_ref_count": 0,
+    "theorem_overlap_ratio": 0.3,
+    "aggregate_score": 3,
+    "sketch_char_len": 0,
+    "full_proof_char_len": 0,
+    "has_split_proof_sections": false,
+    "prompt_char_len": 3150,
+    "context_char_len": 522,
+    "provenance": {
+      "sections": [
+        {
+          "title": "Intro",
+          "original_chars": 19,
+          "included_chars": 19,
+          "truncated": false
+        },
+        {
+          "title": "Lemmas",
+          "original_chars": 42,
+          "included_chars": 42,
+          "truncated": false
+        },
+        {
+          "title": "Main",
+          "original_chars": 76,
+          "included_chars": 76,
+          "truncated": false
+        }
+      ],
+      "available_theorems_count": 1,
+      "target_theorem_index": 0,
+      "truncated_context": false,
+      "context_char_limit": 50000,
+      "rag": {
+        "enabled": false
+      }
+    }
+  },
+  "variant": "baseline"
+}

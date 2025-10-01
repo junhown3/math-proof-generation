@@ -1,0 +1,128 @@
+{
+  "paper_id": "2509.22618",
+  "theorem_index": 1,
+  "theorem_statement": "\\label{iden-2} Let $n$ be a positive integer and let $A$ be a set of positive integers. We have\n(a)  \\[ \\sum_{k=1}^{n}N^p_A(k)\\left(q_A^e(n-k)-q_A^o(n-k)\\right)=\\tau_A(n), \\]\n(b)  \\[ \\sum_{k=1}^nN^q_A(k)\\left(p_A^e(n-k)-p_A^o(n-k)\\right)=\\tau_A^s(n). \\]",
+  "generated_proof": "### Proof Sketch\n- Start from the generating functions in Theorem 1: for N_A^p, multiply its generating function by ∏_{a∈A}(1−x^a); for N_A^q, multiply its generating function by ∏_{a∈A}(1+x^a)^{-1}.\n- Observe the classical parity-generating identities:\n  - ∏_{a∈A}(1−x^a) = ∑_{n≥0} (q_A^e(n)−q_A^o(n)) x^n.\n  - ∏_{a∈A}(1+x^a)^{-1} = ∑_{n≥0} (p_A^e(n)−p_A^o(n)) x^n.\n- Also note the divisor-sum expansions:\n  - ∑_{b∈A} x^b/(1−x^b) = ∑_{n≥1} τ_A(n) x^n.\n  - ∑_{b∈A} x^b/(1+x^b) = ∑_{n≥1} τ_A^s(n) x^n.\n- After the multiplications, the left-hand sides become Cauchy products whose coefficients are precisely the convolutions in the theorem; the right-hand sides become the τ-series. Coefficient extraction yields the desired identities.\n\n### Proof\nWe work throughout with formal power series in x.\n\nStep 1: Parity generating functions.\n- For distinct partitions with parts in A, the bivariate generating function with z marking the number of parts is ∏_{a∈A}(1+z x^a). Setting z=−1 gives\n  ∏_{a∈A}(1−x^a) = ∑_{n",
+  "proof_char_len": 1009,
+  "proof_sections": null,
+  "model_used": "gpt-5",
+  "generation_time": 75.77070021629333,
+  "success": true,
+  "error_message": null,
+  "token_count": 12070,
+  "generated_at": "2025-10-01T10:12:20.598809",
+  "quality": {
+    "math_balance_ok": true,
+    "structure_markers": 0,
+    "conclusion_symbol": false,
+    "word_count": 141,
+    "length_category": "medium",
+    "lemma_ref_count": 0,
+    "theorem_overlap_ratio": 0.464,
+    "aggregate_score": 2,
+    "sketch_char_len": 0,
+    "full_proof_char_len": 717,
+    "has_split_proof_sections": true,
+    "prompt_char_len": 24186,
+    "context_char_len": 21351,
+    "provenance": {
+      "sections": [
+        {
+          "title": "Motivation and Basic Definitions",
+          "original_chars": 5551,
+          "included_chars": 1503,
+          "truncated": true
+        },
+        {
+          "title": " Generating Functions for $N_A^p(n)$ and $N_A^q(n)$, and Six ways to Convolution and Recurrence Identities",
+          "original_chars": 0,
+          "included_chars": 0,
+          "truncated": false
+        },
+        {
+          "title": " Derivation with a Direct Application",
+          "original_chars": 5808,
+          "included_chars": 1503,
+          "truncated": true
+        },
+        {
+          "title": " Inversion",
+          "original_chars": 3797,
+          "included_chars": 1503,
+          "truncated": true
+        },
+        {
+          "title": " Product with $\\prod_{n=1",
+          "original_chars": 1948,
+          "included_chars": 1503,
+          "truncated": true
+        },
+        {
+          "title": " Logarithmic Differentiation",
+          "original_chars": 2817,
+          "included_chars": 1503,
+          "truncated": true
+        },
+        {
+          "title": " Recurrence Identities over $A$",
+          "original_chars": 2008,
+          "included_chars": 1503,
+          "truncated": true
+        },
+        {
+          "title": " Interplay with Carlitz Compositions",
+          "original_chars": 2636,
+          "included_chars": 1503,
+          "truncated": true
+        },
+        {
+          "title": " Asymptotic Estimate of $N_A^p(n)$ when $A$ is a Finite Set",
+          "original_chars": 16062,
+          "included_chars": 1503,
+          "truncated": true
+        }
+      ],
+      "available_theorems_count": 21,
+      "target_theorem_index": 1,
+      "truncated_context": false,
+      "context_char_limit": 50000,
+      "rag": {
+        "enabled": false
+      }
+    },
+    "structural": {
+      "symbol_total": 133,
+      "symbol_introduced": 37,
+      "symbol_undefined": [
+        "Af",
+        "Al",
+        "Ca",
+        "Co",
+        "Fo",
+        "Ob",
+        "Pa",
+        "Pr",
+        "Se",
+        "Sk",
+        "St",
+        "Th",
+        "ac",
+        "al",
+        "ar",
+        "as",
+        "at",
+        "bi",
+        "by",
+        "ca"
+      ],
+      "symbol_undefined_count": 102,
+      "lemma_ref_count": 0,
+      "lemma_missing": [],
+      "lemma_missing_count": 0,
+      "hallucination_risk_level": "medium"
+    }
+  },
+  "variant": "baseline",
+  "input_tokens": 9131,
+  "output_tokens": 2939
+}

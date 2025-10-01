@@ -1,0 +1,92 @@
+{
+  "paper_id": "mock_paper_id",
+  "theorem_index": 0,
+  "theorem_statement": "Let A be finite then |3A| \\ge c|A|^{1+\\delta}.",
+  "generated_proof": "### Proof Sketch\n- The asserted superlinear lower bound cannot hold for arbitrary finite sets A in an abelian group like the integers: arithmetic progressions have 3A of size roughly 3|A|, which is only linear in |A|. Thus a universal exponent δ>0 is impossible without extra hypotheses that exclude near-progressions.\n- The sharp, unconditional lower bound in torsion-free ordered abelian groups is the linear inequality |3A| ≥ 3|A| − 2. It follows from the basic inequality |X+Y| ≥ |X| + |Y| − 1 for finite subsets X,Y of the integers, applied twice: first to A+A, then to A+(A+A).\n- This bound is attained by arithmetic progressions, hence is optimal in general.\n- To obtain a superlinear bound |3A| ≥ c|A|^{1+δ}, one must impose additional structure on A (e.g., convexity, sum-product-type non-concentration, or forbidding proximity to low-dimensional progressions). Standard methods toward such results combine additive energy estimates with incidence geometry or structural theorems.\n- Below, we give a complete proof of the sharp linear bound and explain the obstruction to the superlinear claim, then indicate the missing ingredients that would yield superlinear growth under extra assumptions.\n\n### Proof\nWe work in the ambient group of integers Z (more generally, any torsion-free abelian group equipped with a translation-invariant total order suffices). For a finite set S, let |S| denote its cardinality, and for sets X,Y define X+Y = {x+y : x∈X, y∈Y} and kA = A + A + ⋯ + A (k times).\n\nStep 1: A basic sumset lower bound in Z.\nClaim: For finite nonempty X,Y ⊂ Z, one has\n|X+Y| ≥ |X| + |Y| − 1.\n\nProof. Write X = {x1 < x2 < ⋯ < xm} with m = |X|, and fix any nonempty finite Y. Consider the nested unions\nS_j := (x1 + Y) ∪ ⋯ ∪ (xj + Y), for j=1,…,m.\nWe show by induction that |S_j| ≥ |Y| + (j−1). For j=1 this is clear since |S_1| = |x1 + Y| = |Y|. Suppose |S_j| ≥ |Y| + (j−1). Then S_{j+1} = S_j ∪ (x_{j+1} + Y). Because x_{j+1} > x_j, the maximum element of x_{j+1} + Y exceeds the maximum element of S_j; hence at least one new element is contributed when adjoining x_{j+1}+Y. Thus |S_{j+1}| ≥ |S_j| + 1 ≥ |Y| + j. After j=m steps we get |X+Y| = |S_m| ≥ |Y| + (m−1) = |X| + |Y| − 1, as claimed.\n\nStep 2: Apply Step 1 twice to get a linear lower bound for 3A.\nLet A be finite and nonempty. First, take X=Y=A to obtain\n|2A| = |A+A| ≥ |A| + |A| − 1 = 2|A| − 1.\nNext, take X=A and Y=2A in Step 1, giving\n|3A| = |A + 2A| ≥ |A| + |2A| − 1 ≥ |A| + (2|A| − 1) − 1 = 3|A| − 2.\n\nThus for all finite nonempty A⊂Z we have the unconditional bound\n|3A| ≥ 3|A| − 2.                                       (1)\n\nStep 3: Optimality and obstruction to superlinear growth.\nEquality in (1) is achieved when A is an arithmetic progression: if A = {a, a+d, …, a+(n−1)d}, then kA is again an arithmetic progression with\n|kA| = kn − (k−1). In particular, |3A| = 3|A| − 2. Hence (1) is sharp in general, and no universal superlinear bound of the form |3A| ≥ c|A|^{1+δ} can hold for arbitrary finite A.\n\nConsequently, the theorem as stated (asserting existence of universal c>0 and δ>0 such that |3A| ≥ c|A|^{1+δ} for all finite A) is false without additional hypotheses excluding progression-like structure.\n\nGAP: A universal superlinear lower bound for |3A| for all finite A is impossible; to prove a version with δ>0 one must impose extra non-degeneracy, e.g., A convex or A not contained in a proper generalized arithmetic progression of bounded rank, and then prove |3A| ≥ c|A|^{1+δ} under that hypothesis.\n\nIndicative path under additional hypotheses (not used above):\n- If A is convex (a_i+1−a_i increasing), one can combine additive energy bounds with incidence geometry to show |A+A| ≥ c|A|^{1+ε} for some ε>0; then |3A| ≥ |A| + |2A| − 1 yields |3A| ≥ c'|A|^{1+ε}.\n- Alternatively, a structural dichotomy (Freiman-type): small tripling implies containment in a low-dimensional generalized arithmetic progression (GAP). The contrapositive gives that sets far from such progressions must have superlinear triple-sum growth.\n\nGAP: Precise convex-set sumset growth (e.g., via Szemerédi–Trotter) and Freiman-type structure theorems would need to be invoked and quantified to turn these sketches into a complete proof with explicit c,δ; such results are standard but not provided in the current context.\n\nGiven the above, the best unconditional bound provable here is (1), and superlinear growth requires additional assumptions not present in the theorem’s statement.",
+  "proof_char_len": 4457,
+  "proof_sections": null,
+  "model_used": "gpt-5",
+  "generation_time": 250.1843774318695,
+  "success": true,
+  "error_message": null,
+  "token_count": 5774,
+  "generated_at": "2025-10-01T08:55:59.234522",
+  "quality": {
+    "math_balance_ok": true,
+    "structure_markers": 4,
+    "conclusion_symbol": false,
+    "word_count": 774,
+    "length_category": "long",
+    "lemma_ref_count": 0,
+    "theorem_overlap_ratio": 0.8,
+    "aggregate_score": 3,
+    "sketch_char_len": 0,
+    "full_proof_char_len": 1185,
+    "has_split_proof_sections": true,
+    "prompt_char_len": 3150,
+    "context_char_len": 522,
+    "provenance": {
+      "sections": [
+        {
+          "title": "Intro",
+          "original_chars": 19,
+          "included_chars": 19,
+          "truncated": false
+        },
+        {
+          "title": "Lemmas",
+          "original_chars": 42,
+          "included_chars": 42,
+          "truncated": false
+        },
+        {
+          "title": "Main",
+          "original_chars": 76,
+          "included_chars": 76,
+          "truncated": false
+        }
+      ],
+      "available_theorems_count": 1,
+      "target_theorem_index": 0,
+      "truncated_context": false,
+      "context_char_limit": 50000,
+      "rag": {
+        "enabled": false
+      }
+    },
+    "structural": {
+      "symbol_total": 198,
+      "symbol_introduced": 12,
+      "symbol_undefined": [
+        "Af",
+        "Al",
+        "Ap",
+        "Be",
+        "Cl",
+        "Co",
+        "Eq",
+        "Fi",
+        "Fo",
+        "Fr",
+        "GA",
+        "Gi",
+        "He",
+        "Ne",
+        "Op",
+        "P",
+        "Pr",
+        "S",
+        "Sk",
+        "St"
+      ],
+      "symbol_undefined_count": 237,
+      "lemma_ref_count": 0,
+      "lemma_missing": [],
+      "lemma_missing_count": 0,
+      "hallucination_risk_level": "medium"
+    }
+  },
+  "variant": "baseline",
+  "input_tokens": 797,
+  "output_tokens": 4977
+}

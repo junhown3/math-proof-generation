@@ -1,0 +1,175 @@
+{
+  "paper_id": "2509.22618",
+  "theorem_index": 0,
+  "theorem_statement": "\\label{iden-1} Let $n$ be a positive integer and let $A$ be a set of positive integers. We have\n(a)  \\[ \\sum_{n=1}^{\\infty}N^p_A(n)x^n=\\left(\\prod_{a\\in A}\\frac{1}{1-x^a}\\right)\\left(\\sum_{b\\in A}\\frac{x^b}{1-x^b}\\right), \\]\n(b)  \\[ N^p_A(n)=\\sum_{k=0}^{n-1}p_A(k)\\tau_A(n-k), \\]\n(c)  \\[ \\sum_{n=1}^{\\infty}N^q_A(n)x^n=\\left(\\prod_{a\\in A}(1+x^a)\\right)\\left(\\sum_{b\\in A}\\frac{x^b}{1+x^b}\\right), \\]\n(d)  \\[ N^q_A(n)=\\sum_{k=0}^{n-1}q_A(k)\\tau_A^s(n-k). \\]",
+  "generated_proof": "### Proof Sketch\n- Count N_A^p(n) by marking: the total number of parts across all partitions of size n equals the number of pairs (partition of n with parts in A, distinguished occurrence of a part). For ordinary partitions, a part b ∈ A can appear with any multiplicity; marking one of its occurrences contributes the factor x^b/(1−x^b)^2 in the b-factor, while other parts contribute as usual. This yields a sum over b, which algebraically factors as the product over A times the Lambert series ∑_{b∈A} x^b/(1−x^b).\n- For distinct partitions, the same pointing idea works, except each part b occurs at most once; the marked b-factor replaces (1+x^b) by x^b, giving ∑_{b∈A} x^b ∏_{a≠b}(1+x^a) = (∏_{a∈A}(",
+  "proof_char_len": 706,
+  "proof_sections": null,
+  "model_used": "gpt-5",
+  "generation_time": 108.88576173782349,
+  "success": true,
+  "error_message": null,
+  "token_count": 9047,
+  "generated_at": "2025-10-01T10:10:41.166140",
+  "quality": {
+    "math_balance_ok": true,
+    "structure_markers": 0,
+    "conclusion_symbol": false,
+    "word_count": 117,
+    "length_category": "short",
+    "lemma_ref_count": 0,
+    "theorem_overlap_ratio": 0.219,
+    "aggregate_score": 1,
+    "sketch_char_len": 0,
+    "full_proof_char_len": 689,
+    "has_split_proof_sections": true,
+    "prompt_char_len": 15880,
+    "context_char_len": 12841,
+    "provenance": {
+      "sections": [
+        {
+          "title": "Motivation and Basic Definitions",
+          "original_chars": 5551,
+          "included_chars": 1503,
+          "truncated": true
+        },
+        {
+          "title": " Generating Functions for $N_A^p(n)$ and $N_A^q(n)$, and Six ways to Convolution and Recurrence Identities",
+          "original_chars": 0,
+          "included_chars": 0,
+          "truncated": false
+        },
+        {
+          "title": " Derivation with a Direct Application",
+          "original_chars": 5808,
+          "included_chars": 1503,
+          "truncated": true
+        },
+        {
+          "title": " Inversion",
+          "original_chars": 3797,
+          "included_chars": 1503,
+          "truncated": true
+        },
+        {
+          "title": " Product with $\\prod_{n=1",
+          "original_chars": 1948,
+          "included_chars": 1503,
+          "truncated": true
+        },
+        {
+          "title": " Logarithmic Differentiation",
+          "original_chars": 2817,
+          "included_chars": 1503,
+          "truncated": true
+        },
+        {
+          "title": " Recurrence Identities over $A$",
+          "original_chars": 2008,
+          "included_chars": 1503,
+          "truncated": true
+        },
+        {
+          "title": " Interplay with Carlitz Compositions",
+          "original_chars": 2636,
+          "included_chars": 1503,
+          "truncated": true
+        },
+        {
+          "title": " Asymptotic Estimate of $N_A^p(n)$ when $A$ is a Finite Set",
+          "original_chars": 16062,
+          "included_chars": 1503,
+          "truncated": true
+        }
+      ],
+      "available_theorems_count": 21,
+      "target_theorem_index": 0,
+      "truncated_context": false,
+      "context_char_limit": 50000,
+      "rag": {
+        "enabled": true,
+        "small_doc_bypass": false,
+        "cache_used": false,
+        "cache_path": "data/rag_cache\\2509.22618_900_150.json",
+        "query_raw": "\\label{iden-1} Let $n$ be a positive integer and let $A$ be a set of positive integers. We have\n(a)  \\[ \\sum_{n=1}^{\\infty}N^p_A(n)x^n=\\left(\\prod_{a\\in A}\\frac{1}{1-x^a}\\right)\\left(\\sum_{b\\in A}\\frac{x^b}{1-x^b}\\right), \\]\n(b)  \\[ N^p_A(n)=\\sum_{k=0}^{n-1}p_A(k)\\tau_A(n-k), \\]\n(c)  \\[ \\sum_{n=1}^{\\infty}N^q_A(n)x^n=\\left(\\prod_{a\\in A}(1+x^a)\\right)\\left(\\sum_{b\\in A}\\frac{x^b}{1+x^b}\\right), \\]\n(d)  \\[ N^q_A(n)=\\sum_{k=0}^{n-1}q_A(k)\\tau_A^s(n-k). \\]",
+        "query_normalized": "\\label iden-1 let n be a positive integer and let a be a set of positive integers. we have (a) \\[ \\sum_ n=1 ^ \\infty n^p_a(n)x^n=\\left(\\prod_ a\\in a \\frac 1 1-x^a \\right)\\left(\\sum_ b\\in a \\frac x^b 1-x^b \\right), \\] (b) \\[ n^p_a(n)=\\sum_ k=0 ^ n-1 p_a(k)\\tau_a(n-k), \\] (c) \\[ \\sum_ n=1 ^ \\infty n^q_a(n)x^n=\\left(\\prod_ a\\in a (1+x^a)\\right)\\left(\\sum_ b\\in a \\frac x^b 1+x^b \\right), \\] (d) \\[ n^q_a(n)=\\sum_ k=0 ^ n-1 q_a(k)\\tau_a^s(n-k). \\]",
+        "force_rag": true,
+        "doc_chars": 19692,
+        "chunk_size": 900,
+        "overlap": 150,
+        "top_k_requested": 5,
+        "small_doc_threshold": 1350,
+        "hash_prefix": "8d4626b01d08",
+        "token_coverage_before": 1.0,
+        "fallback_added": false,
+        "token_coverage_after": 1.0,
+        "merged": true,
+        "merged_groups": [
+          [
+            6,
+            7,
+            8
+          ],
+          [
+            15,
+            16
+          ]
+        ],
+        "selected_coverage_ratio": 0.20521023765996343,
+        "effective_top_k": 2,
+        "total_chunks": 24,
+        "top_k": 5,
+        "selected": [
+          {
+            "id": "m_6_8",
+            "score": 4.5862220154782705,
+            "start_char": 5099,
+            "end_char": 7645,
+            "char_len": 2545
+          },
+          {
+            "id": "m_15_16",
+            "score": 4.093843994757963,
+            "start_char": 12428,
+            "end_char": 13925,
+            "char_len": 1496
+          }
+        ]
+      }
+    },
+    "structural": {
+      "symbol_total": 125,
+      "symbol_introduced": 38,
+      "symbol_undefined": [
+        "Co",
+        "Fo",
+        "La",
+        "Pr",
+        "Sk",
+        "Th",
+        "ai",
+        "al",
+        "ap",
+        "ar",
+        "as",
+        "at",
+        "br",
+        "bu",
+        "by",
+        "ca",
+        "ce",
+        "ch",
+        "ci",
+        "co"
+      ],
+      "symbol_undefined_count": 98,
+      "lemma_ref_count": 0,
+      "lemma_missing": [],
+      "lemma_missing_count": 0,
+      "hallucination_risk_level": "medium"
+    }
+  },
+  "variant": "rag",
+  "input_tokens": 6087,
+  "output_tokens": 2960
+}

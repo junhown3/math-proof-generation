@@ -1,0 +1,193 @@
+{
+  "paper_id": "2509.22618",
+  "theorem_index": 1,
+  "theorem_statement": "\\label{iden-2} Let $n$ be a positive integer and let $A$ be a set of positive integers. We have\n(a)  \\[ \\sum_{k=1}^{n}N^p_A(k)\\left(q_A^e(n-k)-q_A^o(n-k)\\right)=\\tau_A(n), \\]\n(b)  \\[ \\sum_{k=1}^nN^q_A(k)\\left(p_A^e(n-k)-p_A^o(n-k)\\right)=\\tau_A^s(n). \\]",
+  "generated_proof": "### Proof Sketch\n- Work in the ring of formal power series Z[[x]], where Euler-type products over A are legitimate because coefficients of x^n depend only on finitely many a ≤ n.\n- Use the generating functions for the total number of parts: by Theorem 1, ∑_{n≥1} N^p_A(n)x^n = (∏_{a∈A}(1−x^a)^{-",
+  "proof_char_len": 295,
+  "proof_sections": null,
+  "model_used": "gpt-5",
+  "generation_time": 118.30785393714905,
+  "success": true,
+  "error_message": null,
+  "token_count": 8878,
+  "generated_at": "2025-10-01T10:14:19.245740",
+  "quality": {
+    "math_balance_ok": true,
+    "structure_markers": 0,
+    "conclusion_symbol": false,
+    "word_count": 50,
+    "length_category": "short",
+    "lemma_ref_count": 0,
+    "theorem_overlap_ratio": 0.179,
+    "aggregate_score": 1,
+    "sketch_char_len": 0,
+    "full_proof_char_len": 278,
+    "has_split_proof_sections": true,
+    "prompt_char_len": 15549,
+    "context_char_len": 12714,
+    "provenance": {
+      "sections": [
+        {
+          "title": "Motivation and Basic Definitions",
+          "original_chars": 5551,
+          "included_chars": 1503,
+          "truncated": true
+        },
+        {
+          "title": " Generating Functions for $N_A^p(n)$ and $N_A^q(n)$, and Six ways to Convolution and Recurrence Identities",
+          "original_chars": 0,
+          "included_chars": 0,
+          "truncated": false
+        },
+        {
+          "title": " Derivation with a Direct Application",
+          "original_chars": 5808,
+          "included_chars": 1503,
+          "truncated": true
+        },
+        {
+          "title": " Inversion",
+          "original_chars": 3797,
+          "included_chars": 1503,
+          "truncated": true
+        },
+        {
+          "title": " Product with $\\prod_{n=1",
+          "original_chars": 1948,
+          "included_chars": 1503,
+          "truncated": true
+        },
+        {
+          "title": " Logarithmic Differentiation",
+          "original_chars": 2817,
+          "included_chars": 1503,
+          "truncated": true
+        },
+        {
+          "title": " Recurrence Identities over $A$",
+          "original_chars": 2008,
+          "included_chars": 1503,
+          "truncated": true
+        },
+        {
+          "title": " Interplay with Carlitz Compositions",
+          "original_chars": 2636,
+          "included_chars": 1503,
+          "truncated": true
+        },
+        {
+          "title": " Asymptotic Estimate of $N_A^p(n)$ when $A$ is a Finite Set",
+          "original_chars": 16062,
+          "included_chars": 1503,
+          "truncated": true
+        }
+      ],
+      "available_theorems_count": 21,
+      "target_theorem_index": 1,
+      "truncated_context": false,
+      "context_char_limit": 50000,
+      "rag": {
+        "enabled": true,
+        "small_doc_bypass": false,
+        "cache_used": true,
+        "cache_path": "data/rag_cache\\2509.22618_900_150.json",
+        "query_raw": "\\label{iden-2} Let $n$ be a positive integer and let $A$ be a set of positive integers. We have\n(a)  \\[ \\sum_{k=1}^{n}N^p_A(k)\\left(q_A^e(n-k)-q_A^o(n-k)\\right)=\\tau_A(n), \\]\n(b)  \\[ \\sum_{k=1}^nN^q_A(k)\\left(p_A^e(n-k)-p_A^o(n-k)\\right)=\\tau_A^s(n). \\]",
+        "query_normalized": "\\label iden-2 let n be a positive integer and let a be a set of positive integers. we have (a) \\[ \\sum_ k=1 ^ n n^p_a(k)\\left(q_a^e(n-k)-q_a^o(n-k)\\right)=\\tau_a(n), \\] (b) \\[ \\sum_ k=1 ^nn^q_a(k)\\left(p_a^e(n-k)-p_a^o(n-k)\\right)=\\tau_a^s(n). \\]",
+        "force_rag": true,
+        "doc_chars": 19692,
+        "chunk_size": 900,
+        "overlap": 150,
+        "top_k_requested": 5,
+        "small_doc_threshold": 1350,
+        "hash_prefix": "8d4626b01d08",
+        "token_coverage_before": 1.0,
+        "fallback_added": false,
+        "token_coverage_after": 1.0,
+        "merged": true,
+        "merged_groups": [
+          [
+            11
+          ],
+          [
+            13
+          ],
+          [
+            15,
+            16
+          ],
+          [
+            18
+          ]
+        ],
+        "selected_coverage_ratio": 0.18489742027219175,
+        "effective_top_k": 4,
+        "total_chunks": 24,
+        "top_k": 5,
+        "selected": [
+          {
+            "id": 11,
+            "score": 2.0592004659329306,
+            "start_char": 9381,
+            "end_char": 10086,
+            "char_len": 704
+          },
+          {
+            "id": 13,
+            "score": 1.7256692465942567,
+            "start_char": 10868,
+            "end_char": 11559,
+            "char_len": 690
+          },
+          {
+            "id": "m_15_16",
+            "score": 2.473434137477791,
+            "start_char": 12428,
+            "end_char": 13925,
+            "char_len": 1496
+          },
+          {
+            "id": 18,
+            "score": 1.7237300116046232,
+            "start_char": 14825,
+            "end_char": 15577,
+            "char_len": 751
+          }
+        ]
+      }
+    },
+    "structural": {
+      "symbol_total": 78,
+      "symbol_introduced": 37,
+      "symbol_undefined": [
+        "Eu",
+        "Pr",
+        "Sk",
+        "Th",
+        "Us",
+        "Wo",
+        "Z",
+        "al",
+        "ar",
+        "by",
+        "ca",
+        "ch",
+        "ci",
+        "co",
+        "de",
+        "ef",
+        "eo",
+        "er",
+        "es",
+        "et"
+      ],
+      "symbol_undefined_count": 58,
+      "lemma_ref_count": 0,
+      "lemma_missing": [],
+      "lemma_missing_count": 0,
+      "hallucination_risk_level": "medium"
+    }
+  },
+  "variant": "rag",
+  "input_tokens": 5902,
+  "output_tokens": 2976
+}

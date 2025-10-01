@@ -1,0 +1,420 @@
+{
+  "paper_id": "2509.22618",
+  "model": "gpt-5",
+  "reasoning_effort": "medium",
+  "rag_params": {
+    "chunk_size": 900,
+    "overlap": 150,
+    "top_k": 5
+  },
+  "indices": [
+    0,
+    1,
+    2
+  ],
+  "results": [
+    {
+      "theorem_index": 0,
+      "runtime_sec": 286.6028108596802,
+      "subprocess_error": null,
+      "stderr": null,
+      "stdout": null,
+      "baseline_found": true,
+      "rag_found": true,
+      "baseline_prompt_len": 24186,
+      "rag_prompt_len": 15880,
+      "baseline_context_len": 21147,
+      "rag_context_len": 12841,
+      "baseline_structural": {
+        "symbol_total": 159,
+        "symbol_introduced": 38,
+        "symbol_undefined": [
+          "Al",
+          "Co",
+          "De",
+          "Ex",
+          "Fi",
+          "Fo",
+          "Mu",
+          "P",
+          "Pa",
+          "Pr",
+          "Q",
+          "Si",
+          "Sk",
+          "Su",
+          "Th",
+          "Wo",
+          "Wr",
+          "af",
+          "ag",
+          "ai"
+        ],
+        "symbol_undefined_count": 154,
+        "lemma_ref_count": 0,
+        "lemma_missing": [],
+        "lemma_missing_count": 0,
+        "hallucination_risk_level": "medium"
+      },
+      "rag_structural": {
+        "symbol_total": 125,
+        "symbol_introduced": 38,
+        "symbol_undefined": [
+          "Co",
+          "Fo",
+          "La",
+          "Pr",
+          "Sk",
+          "Th",
+          "ai",
+          "al",
+          "ap",
+          "ar",
+          "as",
+          "at",
+          "br",
+          "bu",
+          "by",
+          "ca",
+          "ce",
+          "ch",
+          "ci",
+          "co"
+        ],
+        "symbol_undefined_count": 98,
+        "lemma_ref_count": 0,
+        "lemma_missing": [],
+        "lemma_missing_count": 0,
+        "hallucination_risk_level": "medium"
+      },
+      "baseline_success": true,
+      "rag_success": true,
+      "rag_provenance": {
+        "enabled": true,
+        "small_doc_bypass": false,
+        "cache_used": false,
+        "cache_path": "data/rag_cache\\2509.22618_900_150.json",
+        "query_raw": "\\label{iden-1} Let $n$ be a positive integer and let $A$ be a set of positive integers. We have\n(a)  \\[ \\sum_{n=1}^{\\infty}N^p_A(n)x^n=\\left(\\prod_{a\\in A}\\frac{1}{1-x^a}\\right)\\left(\\sum_{b\\in A}\\frac{x^b}{1-x^b}\\right), \\]\n(b)  \\[ N^p_A(n)=\\sum_{k=0}^{n-1}p_A(k)\\tau_A(n-k), \\]\n(c)  \\[ \\sum_{n=1}^{\\infty}N^q_A(n)x^n=\\left(\\prod_{a\\in A}(1+x^a)\\right)\\left(\\sum_{b\\in A}\\frac{x^b}{1+x^b}\\right), \\]\n(d)  \\[ N^q_A(n)=\\sum_{k=0}^{n-1}q_A(k)\\tau_A^s(n-k). \\]",
+        "query_normalized": "\\label iden-1 let n be a positive integer and let a be a set of positive integers. we have (a) \\[ \\sum_ n=1 ^ \\infty n^p_a(n)x^n=\\left(\\prod_ a\\in a \\frac 1 1-x^a \\right)\\left(\\sum_ b\\in a \\frac x^b 1-x^b \\right), \\] (b) \\[ n^p_a(n)=\\sum_ k=0 ^ n-1 p_a(k)\\tau_a(n-k), \\] (c) \\[ \\sum_ n=1 ^ \\infty n^q_a(n)x^n=\\left(\\prod_ a\\in a (1+x^a)\\right)\\left(\\sum_ b\\in a \\frac x^b 1+x^b \\right), \\] (d) \\[ n^q_a(n)=\\sum_ k=0 ^ n-1 q_a(k)\\tau_a^s(n-k). \\]",
+        "force_rag": true,
+        "doc_chars": 19692,
+        "chunk_size": 900,
+        "overlap": 150,
+        "top_k_requested": 5,
+        "small_doc_threshold": 1350,
+        "hash_prefix": "8d4626b01d08",
+        "token_coverage_before": 1.0,
+        "fallback_added": false,
+        "token_coverage_after": 1.0,
+        "merged": true,
+        "merged_groups": [
+          [
+            6,
+            7,
+            8
+          ],
+          [
+            15,
+            16
+          ]
+        ],
+        "selected_coverage_ratio": 0.20521023765996343,
+        "effective_top_k": 2,
+        "total_chunks": 24,
+        "top_k": 5,
+        "selected": [
+          {
+            "id": "m_6_8",
+            "score": 4.5862220154782705,
+            "start_char": 5099,
+            "end_char": 7645,
+            "char_len": 2545
+          },
+          {
+            "id": "m_15_16",
+            "score": 4.093843994757963,
+            "start_char": 12428,
+            "end_char": 13925,
+            "char_len": 1496
+          }
+        ]
+      },
+      "model_mismatch": null
+    },
+    {
+      "theorem_index": 1,
+      "runtime_sec": 216.17878580093384,
+      "subprocess_error": null,
+      "stderr": null,
+      "stdout": null,
+      "baseline_found": true,
+      "rag_found": true,
+      "baseline_prompt_len": 24186,
+      "rag_prompt_len": 15549,
+      "baseline_context_len": 21351,
+      "rag_context_len": 12714,
+      "baseline_structural": {
+        "symbol_total": 133,
+        "symbol_introduced": 37,
+        "symbol_undefined": [
+          "Af",
+          "Al",
+          "Ca",
+          "Co",
+          "Fo",
+          "Ob",
+          "Pa",
+          "Pr",
+          "Se",
+          "Sk",
+          "St",
+          "Th",
+          "ac",
+          "al",
+          "ar",
+          "as",
+          "at",
+          "bi",
+          "by",
+          "ca"
+        ],
+        "symbol_undefined_count": 102,
+        "lemma_ref_count": 0,
+        "lemma_missing": [],
+        "lemma_missing_count": 0,
+        "hallucination_risk_level": "medium"
+      },
+      "rag_structural": {
+        "symbol_total": 78,
+        "symbol_introduced": 37,
+        "symbol_undefined": [
+          "Eu",
+          "Pr",
+          "Sk",
+          "Th",
+          "Us",
+          "Wo",
+          "Z",
+          "al",
+          "ar",
+          "by",
+          "ca",
+          "ch",
+          "ci",
+          "co",
+          "de",
+          "ef",
+          "eo",
+          "er",
+          "es",
+          "et"
+        ],
+        "symbol_undefined_count": 58,
+        "lemma_ref_count": 0,
+        "lemma_missing": [],
+        "lemma_missing_count": 0,
+        "hallucination_risk_level": "medium"
+      },
+      "baseline_success": true,
+      "rag_success": true,
+      "rag_provenance": {
+        "enabled": true,
+        "small_doc_bypass": false,
+        "cache_used": true,
+        "cache_path": "data/rag_cache\\2509.22618_900_150.json",
+        "query_raw": "\\label{iden-2} Let $n$ be a positive integer and let $A$ be a set of positive integers. We have\n(a)  \\[ \\sum_{k=1}^{n}N^p_A(k)\\left(q_A^e(n-k)-q_A^o(n-k)\\right)=\\tau_A(n), \\]\n(b)  \\[ \\sum_{k=1}^nN^q_A(k)\\left(p_A^e(n-k)-p_A^o(n-k)\\right)=\\tau_A^s(n). \\]",
+        "query_normalized": "\\label iden-2 let n be a positive integer and let a be a set of positive integers. we have (a) \\[ \\sum_ k=1 ^ n n^p_a(k)\\left(q_a^e(n-k)-q_a^o(n-k)\\right)=\\tau_a(n), \\] (b) \\[ \\sum_ k=1 ^nn^q_a(k)\\left(p_a^e(n-k)-p_a^o(n-k)\\right)=\\tau_a^s(n). \\]",
+        "force_rag": true,
+        "doc_chars": 19692,
+        "chunk_size": 900,
+        "overlap": 150,
+        "top_k_requested": 5,
+        "small_doc_threshold": 1350,
+        "hash_prefix": "8d4626b01d08",
+        "token_coverage_before": 1.0,
+        "fallback_added": false,
+        "token_coverage_after": 1.0,
+        "merged": true,
+        "merged_groups": [
+          [
+            11
+          ],
+          [
+            13
+          ],
+          [
+            15,
+            16
+          ],
+          [
+            18
+          ]
+        ],
+        "selected_coverage_ratio": 0.18489742027219175,
+        "effective_top_k": 4,
+        "total_chunks": 24,
+        "top_k": 5,
+        "selected": [
+          {
+            "id": 11,
+            "score": 2.0592004659329306,
+            "start_char": 9381,
+            "end_char": 10086,
+            "char_len": 704
+          },
+          {
+            "id": 13,
+            "score": 1.7256692465942567,
+            "start_char": 10868,
+            "end_char": 11559,
+            "char_len": 690
+          },
+          {
+            "id": "m_15_16",
+            "score": 2.473434137477791,
+            "start_char": 12428,
+            "end_char": 13925,
+            "char_len": 1496
+          },
+          {
+            "id": 18,
+            "score": 1.7237300116046232,
+            "start_char": 14825,
+            "end_char": 15577,
+            "char_len": 751
+          }
+        ]
+      },
+      "model_mismatch": null
+    },
+    {
+      "theorem_index": 2,
+      "runtime_sec": 414.24566197395325,
+      "subprocess_error": null,
+      "stderr": null,
+      "stdout": null,
+      "baseline_found": true,
+      "rag_found": true,
+      "baseline_prompt_len": 24186,
+      "rag_prompt_len": 15610,
+      "baseline_context_len": 21321,
+      "rag_context_len": 12745,
+      "baseline_structural": {
+        "symbol_total": 12,
+        "symbol_introduced": 25,
+        "symbol_undefined": [
+          "No",
+          "ac",
+          "d",
+          "ex",
+          "ou",
+          "te",
+          "tp",
+          "tr",
+          "ua",
+          "ut",
+          "xt"
+        ],
+        "symbol_undefined_count": 11,
+        "lemma_ref_count": 0,
+        "lemma_missing": [],
+        "lemma_missing_count": 0,
+        "hallucination_risk_level": "medium"
+      },
+      "rag_structural": {
+        "symbol_total": 12,
+        "symbol_introduced": 25,
+        "symbol_undefined": [
+          "No",
+          "ac",
+          "d",
+          "ex",
+          "ou",
+          "te",
+          "tp",
+          "tr",
+          "ua",
+          "ut",
+          "xt"
+        ],
+        "symbol_undefined_count": 11,
+        "lemma_ref_count": 0,
+        "lemma_missing": [],
+        "lemma_missing_count": 0,
+        "hallucination_risk_level": "medium"
+      },
+      "baseline_success": false,
+      "rag_success": false,
+      "rag_provenance": {
+        "enabled": true,
+        "small_doc_bypass": false,
+        "cache_used": true,
+        "cache_path": "data/rag_cache\\2509.22618_900_150.json",
+        "query_raw": "\\label{iden-3} We have\n(a)  \\[ \\sum_{k=1}^{n}N^p_A(k)\\omega(n-k)=\\sum_{k=1}^{n}\\tau_A(k)\\left(q_{\\mathbb N-A}^e(n-k)-q_{\\mathbb N-A}^o(n-k)\\right), \\]\n(b)  \\[ \\sum_{k=1}^n(-1)^{n-k}N^q_A(k)o(n-k)=\\sum_{k=1}^{n}\\tau_A^s(k)\\left(p_{\\mathbb N-A}^e(n-k)-p_{\\mathbb N-A}^o(n-k)\\right). \\]",
+        "query_normalized": "\\label iden-3 we have (a) \\[ \\sum_ k=1 ^ n n^p_a(k)\\omega(n-k)=\\sum_ k=1 ^ n \\tau_a(k)\\left(q_ \\mathbb n-a ^e(n-k)-q_ \\mathbb n-a ^o(n-k)\\right), \\] (b) \\[ \\sum_ k=1 ^n(-1)^ n-k n^q_a(k)o(n-k)=\\sum_ k=1 ^ n \\tau_a^s(k)\\left(p_ \\mathbb n-a ^e(n-k)-p_ \\mathbb n-a ^o(n-k)\\right). \\]",
+        "force_rag": true,
+        "doc_chars": 19692,
+        "chunk_size": 900,
+        "overlap": 150,
+        "top_k_requested": 5,
+        "small_doc_threshold": 1350,
+        "hash_prefix": "8d4626b01d08",
+        "token_coverage_before": 1.0,
+        "fallback_added": false,
+        "token_coverage_after": 1.0,
+        "merged": true,
+        "merged_groups": [
+          [
+            11,
+            12
+          ],
+          [
+            15,
+            16
+          ],
+          [
+            18
+          ]
+        ],
+        "selected_coverage_ratio": 0.18956936827137924,
+        "effective_top_k": 3,
+        "total_chunks": 24,
+        "top_k": 5,
+        "selected": [
+          {
+            "id": "m_11_12",
+            "score": 2.903131778335107,
+            "start_char": 9381,
+            "end_char": 10868,
+            "char_len": 1486
+          },
+          {
+            "id": "m_15_16",
+            "score": 4.496414950141668,
+            "start_char": 12428,
+            "end_char": 13925,
+            "char_len": 1496
+          },
+          {
+            "id": 18,
+            "score": 2.9047465796640615,
+            "start_char": 14825,
+            "end_char": 15577,
+            "char_len": 751
+          }
+        ]
+      },
+      "model_mismatch": null
+    }
+  ],
+  "summary": {
+    "count": 3,
+    "prompt_delta_mean": 0.3517,
+    "context_delta_mean": 0.3998,
+    "baseline_success_rate": 0.6666666666666666,
+    "rag_success_rate": 0.6666666666666666,
+    "hallucination_shift": {
+      "medium->medium": 3
+    }
+  }
+}

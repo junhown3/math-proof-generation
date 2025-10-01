@@ -1,0 +1,80 @@
+{
+  "paper_id": "2509.22618",
+  "theorem_index": 12,
+  "theorem_statement": "\\label{ham-rec} For integer $n\\geq 2$, we have \\begin{equation} h(n)=h(n-1)+1-\\vartheta_2(n). \\end{equation}",
+  "generated_proof": "Error: OpenAI API request failed: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'temperature' is not supported with this model.\", 'type': 'invalid_request_error', 'param': 'temperature', 'code': None}}\nRemove extra parameters; try minimal call with only model and input.",
+  "proof_char_len": 288,
+  "proof_sections": null,
+  "model_used": "unknown",
+  "generation_time": 0.4558095932006836,
+  "success": false,
+  "error_message": "Error: OpenAI API request failed: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'temperature' is not supported with this model.\", 'type': 'invalid_request_error', 'param': 'temperature', 'code': None}}\nRemove extra parameters; try minimal call with only model and input.",
+  "token_count": 0,
+  "generated_at": "2025-09-30T16:59:47.018880",
+  "quality": {
+    "prompt_char_len": 24517,
+    "context_char_len": 22894,
+    "provenance": {
+      "sections": [
+        {
+          "title": "Motivation and Basic Definitions",
+          "original_chars": 5551,
+          "included_chars": 1503,
+          "truncated": true
+        },
+        {
+          "title": " Generating Functions for $N_A^p(n)$ and $N_A^q(n)$, and Six ways to Convolution and Recurrence Identities",
+          "original_chars": 0,
+          "included_chars": 0,
+          "truncated": false
+        },
+        {
+          "title": " Derivation with a Direct Application",
+          "original_chars": 5808,
+          "included_chars": 1503,
+          "truncated": true
+        },
+        {
+          "title": " Inversion",
+          "original_chars": 3797,
+          "included_chars": 1503,
+          "truncated": true
+        },
+        {
+          "title": " Product with $\\prod_{n=1",
+          "original_chars": 1948,
+          "included_chars": 1503,
+          "truncated": true
+        },
+        {
+          "title": " Logarithmic Differentiation",
+          "original_chars": 2817,
+          "included_chars": 1503,
+          "truncated": true
+        },
+        {
+          "title": " Recurrence Identities over $A$",
+          "original_chars": 2008,
+          "included_chars": 1503,
+          "truncated": true
+        },
+        {
+          "title": " Interplay with Carlitz Compositions",
+          "original_chars": 2636,
+          "included_chars": 1503,
+          "truncated": true
+        },
+        {
+          "title": " Asymptotic Estimate of $N_A^p(n)$ when $A$ is a Finite Set",
+          "original_chars": 16062,
+          "included_chars": 1503,
+          "truncated": true
+        }
+      ],
+      "available_theorems_count": 21,
+      "target_theorem_index": 12,
+      "truncated_context": false,
+      "context_char_limit": 50000
+    }
+  }
+}
