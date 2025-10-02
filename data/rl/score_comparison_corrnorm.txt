@@ -1,0 +1,26 @@
+=== Score Comparison Summary ===
+Paper: 2509.22618
+Theorems: [0, 1, 2]
+Total candidates before: 14  after: 6
+Mean overall before: 6.601  after: 1.283  Δ=-5.318 (-80.6%)
+
+Per-dimension means (after vs before):
+  correctness        1.000 (before 7.333, Δ -6.333, -86.4%)
+  completeness       1.000 (before 5.786, Δ -4.786, -82.7%)
+  cohesion           1.500 (before 6.024, Δ -4.524, -75.1%)
+  retrieval_grounding 1.167 (before 6.738, Δ -5.571, -82.7%)
+  conciseness        3.833 (before 6.738, Δ -2.905, -43.1%)
+
+Best-per-theorem uplift:
+theorem | best_before | best_after | Δabs | Δ%
+      0 |       8.467 |      1.500 | -6.967 | -82.3%
+      1 |       6.583 |      1.200 | -5.383 | -81.8%
+      2 |       7.900 |      1.200 | -6.700 | -84.8%
+
+Overall distribution quantiles:
+quantile | before | after | Δ
+p10      |  5.545 |  1.150 | -4.395
+p25      |  6.042 |  1.200 | -4.842
+p50      |  6.317 |  1.200 | -5.117
+p75      |  7.321 |  1.425 | -5.896
+p90      |  7.935 |  1.500 | -6.435

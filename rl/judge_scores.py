@@ -171,7 +171,7 @@ def main():
     parser.add_argument('--real-judge', action='store_true', help='Use real judge model invocation (OpenAI backend currently).')
     parser.add_argument('--backend', default='openai', help='Judge backend when --real-judge set (openai).')
     parser.add_argument('--skip-existing', action='store_true', help='Skip candidates already present in scores file.')
-    parser.add_argument('--canonical-max-chars', type=int, default=4000, help='Truncate canonical proof text to this many characters (0 = disable inclusion).')
+    parser.add_argument('--canonical-max-chars', type=int, default=4000, help='Canonical proof char budget. 0 = exclude canonical entirely. -1 = include full canonical with no truncation. >0 = truncate and append [TRUNCATED] marker if exceeded.')
     parser.add_argument('--force-rescore', action='store_true', help='Ignore skip-existing and rescore all matching candidates.')
     parser.add_argument('--judge-temperature', type=float, default=None, help='Optional temperature override for judge model (omit for default).')
     parser.add_argument('--judge-max-output', type=int, default=None, help='Optional upper bound on judge response tokens (best-effort).')
@@ -243,15 +243,30 @@ def main():
                 continue
             # Determine canonical proof for this theorem if available
             canonical_local = None
+            canonical_char_len = None
+            canonical_included_len = 0
+            canonical_truncated = False
             if paper and th_i < len(theorems):
                 t = theorems[th_i]
                 canon_full = t.proof if getattr(t,'proof',None) else None
+                if canon_full:
+                    canonical_char_len = len(canon_full)
                 if args.canonical_max_chars == 0:
                     canonical_local = None
-                elif canon_full and len(canon_full) > args.canonical_max_chars:
-                    canonical_local = canon_full[:args.canonical_max_chars] + '\n[TRUNCATED]' 
+                elif canon_full:
+                    if args.canonical_max_chars == -1:  # full inclusion
+                        canonical_local = canon_full
+                        canonical_included_len = len(canon_full)
+                    else:
+                        if len(canon_full) > args.canonical_max_chars:
+                            canonical_local = canon_full[:args.canonical_max_chars] + '\n[TRUNCATED]'
+                            canonical_included_len = args.canonical_max_chars
+                            canonical_truncated = True
+                        else:
+                            canonical_local = canon_full
+                            canonical_included_len = len(canon_full)
                 else:
-                    canonical_local = canon_full
+                    canonical_local = None
             for cf in files:
                 with open(cf, 'r', encoding='utf-8') as f:
                     cand = json.load(f)
@@ -270,10 +285,16 @@ def main():
                     scores=judge_raw['scores'],
                     overall=judge_raw['overall'],
                     rationale=judge_raw.get('rationale'),
-                    canonical_used=judge_raw.get('canonical_used', False),
+                    canonical_used=bool(canonical_local),
                     prompt_hash=hashlib.sha256(prompt.encode()).hexdigest()[:16]
                 )
                 row = json.loads(js.to_json())
+                # Add canonical metadata for cost / truncation analysis
+                if canonical_char_len is not None:
+                    row['canonical_char_len'] = canonical_char_len
+                row['canonical_included_len'] = canonical_included_len
+                row['canonical_truncated'] = canonical_truncated
+                row['canonical_max_chars'] = args.canonical_max_chars
                 if used_fallback:
                     row['fallback'] = True
                 outf.write(json.dumps(row, ensure_ascii=False) + '\n')
