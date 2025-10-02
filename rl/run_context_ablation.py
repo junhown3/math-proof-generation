@@ -7,7 +7,11 @@
 Isolation: writes to data/rl/context_ablation/*
 """
 from __future__ import annotations
-import argparse, os, json, subprocess, tempfile, sys
+import argparse, os, json, subprocess, tempfile, sys, pathlib
+_THIS_DIR = pathlib.Path(__file__).resolve().parent
+_ROOT = _THIS_DIR.parent
+if str(_ROOT) not in sys.path:
+    sys.path.insert(0, str(_ROOT))
 from typing import List, Tuple
 
 THIS_DIR = os.path.dirname(__file__)
@@ -65,6 +69,7 @@ def main():
     ap.add_argument('--force-generate', action='store_true')
     ap.add_argument('--skip-generate', action='store_true')
     ap.add_argument('--report-prefix', default='ablation')
+    ap.add_argument('--dummy', action='store_true', help='Use dummy generation (no model load) for fast stub pipeline.')
     args = ap.parse_args()
 
     ensure_dirs()
@@ -88,21 +93,65 @@ def main():
     os.makedirs(minimal_candidates, exist_ok=True)
     os.makedirs(full_candidates, exist_ok=True)
 
+    # Generation: our current generate_context_ablation.py expects --paper, --theorems, --context-mode, --out-dir
     gen_script = os.path.join(ROOT, 'rl', 'generate_context_ablation.py')
-    if not args.skip-generate:
-        for mode,outdir in [('minimal', minimal_candidates), ('full', full_candidates)]:
-            cmd = [sys.executable, gen_script,
-                   '--pairs-file', pairs_path,
-                   '--mode', mode,
-                   '--output-dir', outdir,
-                   '--base-model', args.base_model,
-                   '--temperature', str(args.temperature),
-                   '--max-new-tokens', str(args.max_new_tokens)]
-            if args.double_canonical:
-                cmd.append('--double-canonical')
-            if args.force_generate:
-                cmd.append('--force')
-            run(cmd)
+    if not args.skip_generate:
+        # Load pairs (paper_id,theorem_index)
+        pair_rows = []
+        with open(pairs_path,'r',encoding='utf-8') as f:
+            for line in f:
+                line=line.strip()
+                if not line: continue
+                try:
+                    js=json.loads(line)
+                except Exception:
+                    continue
+                pid = js.get('paper_id'); th = js.get('theorem_index')
+                if pid is None or th is None: continue
+                pair_rows.append((pid,int(th)))
+        # Group by paper for fewer model loads (the generator loads model per invocation).
+        from collections import defaultdict
+        by_paper = defaultdict(list)
+        for pid, th in pair_rows:
+            by_paper[pid].append(th)
+        for pid, th_list in by_paper.items():
+            th_str = ','.join(str(t) for t in sorted(set(th_list)))
+            for mode,outdir in [('minimal', minimal_candidates), ('full', full_candidates)]:
+                # Skip if all targets already exist (best-effort):
+                existing = 0; needed = len(th_list)
+                for t in th_list:
+                    # Candidate files hashed: paper::th::variant::seed -> prefix; we cannot precompute without seed.
+                    # Instead, scan existing dir for metadata match (lightweight for small counts).
+                    for fp in os.listdir(outdir):
+                        if not fp.endswith('.json'): continue
+                        try:
+                            js = json.loads(open(os.path.join(outdir, fp),'r',encoding='utf-8').read())
+                        except Exception:
+                            continue
+                        meta = js.get('meta',{})
+                        if meta.get('paper_id')==pid and meta.get('theorem_index')==t and meta.get('provenance',{}).get('context_mode')==mode:
+                            existing += 1
+                            break
+                if existing == needed and not args.force_generate:
+                    print(f"[gen-skip] {mode} all {needed} candidates for paper {pid} already exist")
+                    continue
+                cmd = [sys.executable, gen_script,
+                       '--paper', pid,
+                       '--theorems', th_str,
+                       '--base-model', args.base_model,
+                       '--out-dir', outdir,
+                       '--context-mode', 'full' if mode=='full' else 'minimal',
+                       '--temperature', str(args.temperature),
+                       '--max-new-tokens', str(args.max_new_tokens)]
+                if mode=='full':
+                    cmd.append('--rag')  # enable RAG in full mode by default
+                if args.double_canonical and mode=='full':
+                    cmd.append('--double-canonical')
+                if args.force_generate:
+                    cmd.append('--force')
+                if args.dummy:
+                    cmd.append('--dummy')
+                run(cmd)
     else:
         print('Skipping generation as requested.')
 
@@ -112,14 +161,38 @@ def main():
     min_stub_scores = os.path.join(DATA_DIR, 'judge_scores_min_stub.jsonl')
 
     def judge(candidates_dir: str, out_path: str, real: bool):
-        cmd = [sys.executable, judge_script,
-               '--candidates-glob', os.path.join(candidates_dir, '*.json'),
-               '--out', out_path,
-               '--canonical-max-chars', str(args.canonical_max_chars)]
-        if real:
-            cmd.append('--real-judge')
-            cmd += ['--judge-model', args.judge_model]
-        run(cmd)
+        # Derive involved papers + theorem range for concise scoring (we reuse manifest pairs).
+        # For simplicity, we score all candidates in the directory (paper filter not yet applied here) by iterating per paper.
+        # We re-open pairs file to know which (paper,theorem) combos to score.
+        pair_list = []
+        with open(pairs_path,'r',encoding='utf-8') as f:
+            for line in f:
+                line=line.strip();
+                if not line: continue
+                try:
+                    js=json.loads(line)
+                except Exception:
+                    continue
+                pid=js.get('paper_id'); th=js.get('theorem_index')
+                if pid is None or th is None: continue
+                pair_list.append((pid,int(th)))
+        from collections import defaultdict
+        by_paper = defaultdict(list)
+        for pid, th in pair_list:
+            by_paper[pid].append(th)
+        for pid, ths in by_paper.items():
+            th_range = ','.join(str(t) for t in sorted(set(ths)))
+            cmd = [sys.executable, judge_script,
+                   '--candidates-dir', candidates_dir,
+                   '--paper', pid,
+                   '--theorems', th_range,
+                   '--out', out_path,
+                   '--canonical-max-chars', str(args.canonical_max_chars),
+                   '--skip-existing']
+            if real:
+                cmd.append('--real-judge')
+                cmd += ['--judge-model', args.judge_model]
+            run(cmd)
 
     # Stub run
     judge(full_candidates, full_stub_scores, real=False)

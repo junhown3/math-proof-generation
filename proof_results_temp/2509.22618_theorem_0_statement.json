@@ -1,0 +1,130 @@
+{
+  "paper_id": "2509.22618",
+  "theorem_index": 0,
+  "theorem_statement": "\\label{iden-1} Let $n$ be a positive integer and let $A$ be a set of positive integers. We have\n(a)  \\[ \\sum_{n=1}^{\\infty}N^p_A(n)x^n=\\left(\\prod_{a\\in A}\\frac{1}{1-x^a}\\right)\\left(\\sum_{b\\in A}\\frac{x^b}{1-x^b}\\right), \\]\n(b)  \\[ N^p_A(n)=\\sum_{k=0}^{n-1}p_A(k)\\tau_A(n-k), \\]\n(c)  \\[ \\sum_{n=1}^{\\infty}N^q_A(n)x^n=\\left(\\prod_{a\\in A}(1+x^a)\\right)\\left(\\sum_{b\\in A}\\frac{x^b}{1+x^b}\\right), \\]\n(d)  \\[ N^q_A(n)=\\sum_{k=0}^{n-1}q_A(k)\\tau_A^s(n-k). \\]",
+  "generated_proof": "Definitions and conventions\n- For a set A ⊆ ℕ and n ≥ 0:\n  - p_A(n): number of (unrestricted) partitions of n with all parts in A, with p_A(0)=1.\n  - q_A(n): number of partitions of n into distinct parts from A, with q_A(0)=1.\n  - N_A^p(n): total number of parts, counted with multiplicity, across all A-restricted partitions of n; set N_A^p(0)=0.\n  - N_A^q(n): total number of parts across all A-restricted distinct-part partitions of n; set N_A^q(0)=0.\n  - τ_A(m): number of divisors d of m that lie in A; set τ_A(0)=0.\n  - τ_A^s(m): signed divisor count τ_A^s(m)=∑_{d∈A, d|m}(-1)^{m/d-1}; set τ_A^s(0)=0.\n\nAll generating functions are formal power series in x (coefficients in ℤ or in ℤ[u]). For any A (possibly infinite), products ∏_{a∈A} with factors having constant term 1 are well-defined as formal power series, since for each fixed total degree only finitely many factors can contribute.\n\n(a) Identity for N_A^p(n)\nIntroduce the bivariate generating function\nF(u,x)=∏_{a∈A}(1−u x^a)^{-1} = ∑_{n,m≥0} p_A(n,m) u^m x^n,\nwhere p_A(n,m) counts A-restricted partitions of n with exactly m parts. Then\nN_A^p(n)=∑_{m≥0} m p_A(n,m) = [x^n] (∂/∂u F(u,x))|_{u=1}.\nUsing the product rule in the ring ℤ[[x]][u] and the usual logarithmic derivative,\n∂/∂u F(u,x) = F(u,x) ∑_{b∈A} x^b/(1−u x^b).\nEvaluating at u=1 gives\n∂/∂u F(u,x)|_{u=1} = (∏_{a∈A} (1−x^a)^{-1}) (∑_{b∈A} x^b/(1−x^b)).\nExtracting coefficients of x^n yields\n∑_{n=1}^∞ N_A^p(n) x^n = (∏_{a∈A} (1−x^a)^{-1}) (∑_{b∈A} x^b/(1−x^b)),\nwhich is (a). (The n=0 term is 0 on both sides.)\n\n(b) Convolution formula for N_A^p(n)\nLet G(x)=∑_{b∈A} x^b/(1−x^b) = ∑_{m≥1} c_m x^m. From G(x)=∑_{b∈A}∑_{j≥1} x^{jb}, one has\nc_m = |{(b,j): b∈A, j≥1, jb=m}| = |{b∈A: b|m}| = τ_A(m).\nBy (a) and Cauchy product,\nN_A^p(n) = [x^n] (∑_{k≥0} p_A(k) x^k)(∑_{m≥1} τ_A(m) x^m)\n= ∑_{k=0}^{n} p_A(k) τ_A(n−k) = ∑_{k=0}^{n−1} p_A(k) τ_A(n−k),\nsince τ_A(0)=0. This is (b).\n\n(c) Identity for N_A^q(n)\nDefine\nH(u,x)=∏_{a∈A}(1+u x^a) = ∑_{n,m≥0} q_A(n,m) u^m x^n,\nwith q_A(n,m) counting A-restricted distinct-part partitions of n with exactly m parts. Then\nN_A^q(n)=∑_{m≥0} m q_A(n,m) = [x^n] (∂/∂u H(u,x))|_{u=1}.\nAs before,\n∂/∂u H(u,x) = H(u,x) ∑_{b∈A} x^b/(1+u x^b),\nso\n∂/∂u H(u,x)|_{u=1} = (∏_{a∈A} (1+x^a)) (∑_{b∈A} x^b/(1+x^b)).\nExtracting coefficients gives (c).\n\n(d) Convolution formula for N_A^q(n)\nExpand\n∑_{b∈A} x^b/(1+x^b) = ∑_{b∈A} ∑_{j≥1} (−1)^{j−1} x^{jb}\n= ∑_{m≥1} (∑_{b∈A, b|m} (−1)^{m/b−1}) x^m\n= ∑_{m≥1} τ_A^s(m) x^m.\nCombining with (c) and Cauchy product,\nN_A^q(n) = [x^n] (∑_{k≥0} q_A(k) x^k)(∑_{m≥1} τ_A^s(m) x^m)\n= ∑_{k=0}^{n} q_A(k) τ_A^s(n−k) = ∑_{k=0}^{n−1} q_A(k) τ_A^s(n−k),\nsince τ_A^s(0)=0. This proves (d).\n\nAll four",
+  "proof_char_len": 2671,
+  "proof_sections": null,
+  "model_used": "gpt-5",
+  "generation_time": 129.14135074615479,
+  "success": true,
+  "error_message": null,
+  "token_count": 6346,
+  "generated_at": "2025-10-02T22:58:19.164264",
+  "quality": {
+    "math_balance_ok": true,
+    "structure_markers": 0,
+    "conclusion_symbol": false,
+    "word_count": 393,
+    "length_category": "medium",
+    "lemma_ref_count": 0,
+    "theorem_overlap_ratio": 0.531,
+    "aggregate_score": 2,
+    "sketch_char_len": 0,
+    "full_proof_char_len": 0,
+    "has_split_proof_sections": false,
+    "prompt_char_len": 806,
+    "context_char_len": 457,
+    "provenance": {
+      "sections": [
+        {
+          "title": "Motivation and Basic Definitions",
+          "original_chars": 5551,
+          "included_chars": 1503,
+          "truncated": true
+        },
+        {
+          "title": " Generating Functions for $N_A^p(n)$ and $N_A^q(n)$, and Six ways to Convolution and Recurrence Identities",
+          "original_chars": 0,
+          "included_chars": 0,
+          "truncated": false
+        },
+        {
+          "title": " Derivation with a Direct Application",
+          "original_chars": 5808,
+          "included_chars": 1503,
+          "truncated": true
+        },
+        {
+          "title": " Inversion",
+          "original_chars": 3797,
+          "included_chars": 1503,
+          "truncated": true
+        },
+        {
+          "title": " Product with $\\prod_{n=1",
+          "original_chars": 1948,
+          "included_chars": 1503,
+          "truncated": true
+        },
+        {
+          "title": " Logarithmic Differentiation",
+          "original_chars": 2817,
+          "included_chars": 1503,
+          "truncated": true
+        },
+        {
+          "title": " Recurrence Identities over $A$",
+          "original_chars": 2008,
+          "included_chars": 1503,
+          "truncated": true
+        },
+        {
+          "title": " Interplay with Carlitz Compositions",
+          "original_chars": 2636,
+          "included_chars": 1503,
+          "truncated": true
+        },
+        {
+          "title": " Asymptotic Estimate of $N_A^p(n)$ when $A$ is a Finite Set",
+          "original_chars": 16062,
+          "included_chars": 1503,
+          "truncated": true
+        }
+      ],
+      "available_theorems_count": 21,
+      "target_theorem_index": 0,
+      "truncated_context": false,
+      "context_char_limit": 50000,
+      "rag": {
+        "enabled": false
+      },
+      "statement_only": true,
+      "rag_used": false
+    },
+    "structural": {
+      "symbol_total": 148,
+      "symbol_introduced": 39,
+      "symbol_undefined": [
+        "Al",
+        "Ca",
+        "Co",
+        "De",
+        "Ev",
+        "Ex",
+        "F",
+        "Fo",
+        "Fr",
+        "H",
+        "Id",
+        "Th",
+        "Us",
+        "al",
+        "ar",
+        "as",
+        "at",
+        "bi",
+        "bo",
+        "bu"
+      ],
+      "symbol_undefined_count": 115,
+      "lemma_ref_count": 0,
+      "lemma_missing": [],
+      "lemma_missing_count": 0,
+      "hallucination_risk_level": "medium"
+    }
+  },
+  "variant": "statement",
+  "input_tokens": 398,
+  "output_tokens": 5948
+}

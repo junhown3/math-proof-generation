@@ -48,7 +48,7 @@ def main():
     parser.add_argument('--temperatures', default='0.1,0.3')
     parser.add_argument('--seeds', default='42,43')
     parser.add_argument('--with-rag', action='store_true', help='(Legacy) include rag variant; superseded by --variants')
-    parser.add_argument('--variants', default='baseline,rag', help='Comma list of variants to generate (subset of baseline,rag). Use "rag" for single RAG run.')
+    parser.add_argument('--variants', default='baseline,rag,statement', help='Comma list of variants to generate (subset of baseline,rag,statement). Include "statement" for theorem-statement-only baseline.')
     parser.add_argument('--rag-chunk-size', type=int, default=900)
     parser.add_argument('--rag-overlap', type=int, default=150)
     parser.add_argument('--rag-top-k', type=int, default=8)
@@ -65,7 +65,7 @@ def main():
         variant_list = ['baseline']
     # Validate
     for v in variant_list:
-        if v not in ('baseline', 'rag'):
+        if v not in ('baseline', 'rag', 'statement'):
             raise SystemExit(f"Unsupported variant: {v}")
 
     os.makedirs(args.out_dir, exist_ok=True)
@@ -100,7 +100,7 @@ def main():
         for seed in seeds:
             for temp in temps:
                 for variant in variant_list:
-                    rag_enabled = (variant == 'rag')
+                    rag_enabled = (variant == 'rag')  # statement + baseline both disable RAG
                     agent = build_agent(args.backend, args.model, results_dir='proof_results_temp', rag_enabled=rag_enabled,
                                         rag_chunk_size=args.rag_chunk_size, rag_overlap=args.rag_overlap, rag_top_k=args.rag_top_k)
                     if hasattr(agent.llm_client, 'temperature_override'):

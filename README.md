@@ -336,3 +336,56 @@ python -m rl.train_scalar_weighted --model-name TinyLlama/TinyLlama-1.1B-Chat-v1
 ```
 
 
+## Canonical Proof Integration for Judging
+
+The term *canonical proof* refers to the original paper proof text extracted from LaTeX and stored in `data/parsed/<paper_id>_parsed.json` under the `theorems` list (each theorem may include a `proof` string). These are now leveraged directly by the judging script so GPT‑5 (or other judge models) evaluates model outputs against the authentic source proof rather than heuristics or incomplete context.
+
+### How It Works
+1. Parse papers with `latex_parser.py` (already done if you see files in `data/parsed/`).
+2. Candidate generation produces JSON lines records that *may* include `canonical_proof` (depending on builder script / earlier pipeline stage).
+3. During judging, if a candidate lacks `canonical_proof` and you pass `--recover-canonical`, the script loads the parsed JSON and fuzzy-matches the theorem statement to locate the correct proof.
+
+### Updated Judge Usage
+```
+python rl/openai_judge.py \
+  --candidates-full rl/out_openai_ctx/candidates_full.jsonl \
+  --candidates-minimal rl/out_openai_ctx/candidates_minimal.jsonl \
+  --out-scores-full rl/out_openai_ctx/scores_full.jsonl \
+  --out-scores-minimal rl/out_openai_ctx/scores_minimal.jsonl \
+  --out-report rl/out_openai_ctx/report.txt \
+  --model gpt-5 \
+  --recover-canonical \
+  --parsed-dir data/parsed
+```
+
+### Flags
+| Flag | Purpose |
+|------|---------|
+| `--recover-canonical` | Attempt to load proof text from parsed JSON if missing in candidate record |
+| `--allow-missing-canonical` | Judge even if canonical proof cannot be found (default is to skip) |
+| `--parsed-dir` | Directory with parsed paper JSON (default `data/parsed`) |
+
+### Matching Heuristic
+Simple whitespace normalization + containment / equality scoring of the theorem statement (length-capped for speed). The highest scoring match supplies the canonical proof.
+
+### When Proofs Are Missing
+If you see warnings such as:
+```
+[warn] no canonical proof for 2509.XXXX_th3, skipping (use --recover-canonical or --allow-missing-canonical)
+```
+Either enable recovery or re-run parsing to ensure proofs were captured. Some LaTeX environments (custom names) may need to be added to `THEOREM_ENVIRONMENTS` or `PROOF_ENVIRONMENTS` in `latex_parser.py`.
+
+### Dataset Construction with Guaranteed Proofs
+To produce a dataset containing only theorems with already attached canonical proofs:
+```
+python rl/build_openai_dataset.py --parsed-dir data/parsed --out-jsonl data/rl/theorems_with_proofs.jsonl --require-canonical
+```
+
+This ensures downstream processes (generation / judging) always have reference proofs without on-the-fly recovery.
+
+### Rationale
+Using the original proof increases evaluation fidelity, penalizes hallucinated but incorrect reasoning more accurately, and enables dimension-specific metrics (correctness, rigor, completeness) to align with the paper’s actual argument structure.
+
+---
+
+

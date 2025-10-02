@@ -7,3 +7,4 @@ peft
 trl
 bitsandbytes
 torch
+matplotlib

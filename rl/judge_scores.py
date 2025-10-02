@@ -13,7 +13,12 @@ Robust JSON parsing with fallback heuristics:
  - On parse failure, falls back to stub scoring while annotating rationale.
 """
 from __future__ import annotations
-import argparse, os, json, glob, hashlib
+import argparse, os, json, glob, hashlib, sys, pathlib
+# Ensure project root on path when executed directly
+_THIS_DIR = pathlib.Path(__file__).resolve().parent
+_ROOT = _THIS_DIR.parent
+if str(_ROOT) not in sys.path:
+    sys.path.insert(0, str(_ROOT))
 from typing import Optional, Dict, Any, Tuple, List, Set
 import time
 from rl.schema import JudgeScore, RUBRIC_DIMENSIONS, aggregate_rubric
@@ -58,6 +63,7 @@ def call_real_judge(prompt: str, model: str, backend: str, max_retries: int = 3,
     """
     backend = backend.lower()
     if backend == 'openai':
+        print('[debug] Entering call_real_judge backend=openai', flush=True)
         api_key = os.environ.get('OPENAI_API_KEY')
         if not api_key:
             raise RuntimeError('Missing OPENAI_API_KEY environment variable.')
@@ -69,6 +75,7 @@ def call_real_judge(prompt: str, model: str, backend: str, max_retries: int = 3,
         last_err = None
         for attempt in range(max_retries):
             try:
+                print(f'[debug] openai attempt={attempt+1}', flush=True)
                 params = {
                     'model': model,
                     'messages': [{"role": "user", "content": prompt}]
@@ -81,6 +88,7 @@ def call_real_judge(prompt: str, model: str, backend: str, max_retries: int = 3,
                 try:
                     resp = client.chat.completions.create(**params)
                 except Exception as eparam:
+                    print(f'[debug] openai param error: {eparam}', flush=True)
                     # Adaptive retry: strip optional params if error references them
                     lower_msg = str(eparam).lower()
                     if any(k in lower_msg for k in ['temperature', 'max_tokens', 'max_output']):
@@ -90,8 +98,10 @@ def call_real_judge(prompt: str, model: str, backend: str, max_retries: int = 3,
                     else:
                         raise
                 content = resp.choices[0].message.content
+                print('[debug] openai success raw length', len(content) if content else 0, flush=True)
                 return {"raw": content}
             except Exception as e:  # retry transient errors
+                print(f'[debug] openai exception attempt {attempt+1}: {e}', flush=True)
                 last_err = e
                 time.sleep(sleep * (attempt + 1))
         raise RuntimeError(f'OpenAI judge failure after retries: {last_err}')

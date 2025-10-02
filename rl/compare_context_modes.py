@@ -8,7 +8,11 @@ We join by (paper_id, theorem_index, variant) assuming exactly one fullctx and o
 If multiple, we take the highest overall within each mode as a simple best-of (configurable later).
 """
 from __future__ import annotations
-import argparse, json, statistics, os
+import argparse, json, statistics, os, sys, pathlib
+_THIS_DIR = pathlib.Path(__file__).resolve().parent
+_ROOT = _THIS_DIR.parent
+if str(_ROOT) not in sys.path:
+    sys.path.insert(0, str(_ROOT))
 from typing import Dict, List, Tuple, Any
 from collections import defaultdict
 from rl.schema import RUBRIC_DIMENSIONS

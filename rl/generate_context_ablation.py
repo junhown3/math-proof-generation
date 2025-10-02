@@ -9,11 +9,15 @@ Modes:
 Outputs candidate JSON lines with meta.context_mode = full|minimal and stored in separate directories.
 """
 from __future__ import annotations
-import argparse, os, json, hashlib
+import argparse, os, json, hashlib, sys, pathlib
+# Ensure project root (parent of this file's directory) on sys.path when executed directly
+_THIS_DIR = pathlib.Path(__file__).resolve().parent
+_ROOT = _THIS_DIR.parent
+if str(_ROOT) not in sys.path:
+    sys.path.insert(0, str(_ROOT))
 from pathlib import Path
 from typing import List
-import torch
-from transformers import AutoTokenizer, AutoModelForCausalLM
+# torch / transformers imported lazily unless real model generation is requested
 from data_manager import DataManager
 from latex_parser import LatexParser
 from context_preparator import ContextPreparator
@@ -55,10 +59,10 @@ def main():
     ap.add_argument('--seed', type=int, default=0)
     ap.add_argument('--force', action='store_true')
     ap.add_argument('--double-canonical', action='store_true', help='If set and full mode: set max_new_tokens = min(2x canonical proof tokens, provided --max-new-tokens ceiling).')
+    ap.add_argument('--dummy', action='store_true', help='Generate dummy placeholder proofs (no model load) for pipeline / stub judge testing.')
     args = ap.parse_args()
 
     os.makedirs(args.out_dir, exist_ok=True)
-    torch.manual_seed(args.seed)
 
     dm = DataManager()
     paper = dm.load_paper(args.paper)
@@ -69,12 +73,22 @@ def main():
     theorems = parsed.get('theorems', [])
     indices = parse_range(args.theorems)
 
-    tokenizer = AutoTokenizer.from_pretrained(args.base_model, use_fast=True)
-    if tokenizer.pad_token is None:
-        tokenizer.pad_token = tokenizer.eos_token
-    model = AutoModelForCausalLM.from_pretrained(args.base_model, torch_dtype=torch.bfloat16 if torch.cuda.is_available() else None)
-    model.to('cuda' if torch.cuda.is_available() else 'cpu')
-    model.eval()
+    if not args.dummy:
+        try:
+            import torch  # type: ignore
+            from transformers import AutoTokenizer, AutoModelForCausalLM  # type: ignore
+        except Exception as e:
+            raise SystemExit(f"Failed to import torch/transformers; install dependencies or use --dummy. Error: {e}")
+        torch.manual_seed(args.seed)
+        tokenizer = AutoTokenizer.from_pretrained(args.base_model, use_fast=True)
+        if tokenizer.pad_token is None:
+            tokenizer.pad_token = tokenizer.eos_token
+        model = AutoModelForCausalLM.from_pretrained(args.base_model, torch_dtype=torch.bfloat16 if torch.cuda.is_available() else None)
+        model.to('cuda' if torch.cuda.is_available() else 'cpu')
+        model.eval()
+    else:
+        tokenizer = None  # placeholders
+        model = None
 
     ctx_prep = ContextPreparator()
     generated = 0
@@ -102,26 +116,27 @@ def main():
                                            rag_chunk_size=args.rag_chunk_size, rag_overlap=args.rag_overlap,
                                            rag_top_k=args.rag_top_k)
             prompt = ctx_prep.format_for_llm_prompt(ctx)
-            canonical_tokens = 0
-            if args.double_canonical:
-                proof = getattr(theorems[th_i],'proof',None)
-                if proof:
-                    canonical_tokens = len(tokenizer(proof, add_special_tokens=False).input_ids)
-            dyn_cap = args.max_new_tokens
-            if args.double_canonical and canonical_tokens>0:
-                dyn_cap = min(args.max_new_tokens, 2 * canonical_tokens)
-            max_new = dyn_cap
             context_char_len = len(ctx.paper_context)
         else:
-            theorem_stmt = theorems[th_i].statement
-            prompt = MIN_PROMPT_TMPL.format(theorem=theorem_stmt)
-            max_new = args.max_new_tokens  # minimal prompt: do not shrink
+            prompt = MIN_PROMPT_TMPL.format(theorem=theorems[th_i].statement)
             context_char_len = 0
-        inputs = tokenizer(prompt, return_tensors='pt', truncation=True, max_length=args.max_length).to(model.device)
-        gen = model.generate(**inputs, max_new_tokens=max_new, temperature=args.temperature,
-                             do_sample=True if args.temperature>0 else False, pad_token_id=tokenizer.eos_token_id)
-        full_text = tokenizer.decode(gen[0], skip_special_tokens=True)
-        completion = full_text[len(prompt):].strip() or full_text
+
+        if args.dummy:
+            completion = f"DUMMY_PROOF(context_mode={args.context_mode}) For theorem index {th_i}. This is a placeholder proof used to test the evaluation pipeline."
+            max_new = 0
+        else:
+            proof = getattr(theorems[th_i],'proof',None) if args.context_mode=='full' else None
+            canonical_tokens = 0
+            if args.context_mode=='full' and args.double_canonical and proof:
+                canonical_tokens = len(tokenizer(proof, add_special_tokens=False).input_ids)
+            max_new = args.max_new_tokens
+            if args.context_mode=='full' and args.double_canonical and canonical_tokens>0:
+                max_new = min(args.max_new_tokens, 2 * canonical_tokens)
+            inputs = tokenizer(prompt, return_tensors='pt', truncation=True, max_length=args.max_length).to(model.device)
+            gen = model.generate(**inputs, max_new_tokens=max_new, temperature=args.temperature,
+                                 do_sample=True if args.temperature>0 else False, pad_token_id=tokenizer.eos_token_id)
+            full_text = tokenizer.decode(gen[0], skip_special_tokens=True)
+            completion = full_text[len(prompt):].strip() or full_text
         variant = 'fullctx' if args.context_mode=='full' else 'minimal'
         meta = CandidateMeta(paper_id=args.paper, theorem_index=th_i, variant=variant, model=args.base_model,
                              temperature=args.temperature, seed=args.seed, rag_enabled=rag_enabled, rag_top_k=args.rag_top_k,
@@ -133,7 +148,7 @@ def main():
         out_path = os.path.join(args.out_dir, f"{cid}.json")
         with open(out_path,'w',encoding='utf-8') as f:
             f.write(cand.to_json())
-        print(f"[gen-{args.context_mode}] theorem {th_i} -> {cid} (max_new={max_new})")
+        print(f"[gen-{args.context_mode}{'-dummy' if args.dummy else ''}] theorem {th_i} -> {cid} (max_new={max_new})")
         generated += 1
     print(f"Done. Generated {generated} {args.context_mode} candidates -> {args.out_dir}")
 

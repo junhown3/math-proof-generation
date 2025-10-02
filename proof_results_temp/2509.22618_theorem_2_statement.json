@@ -6,11 +6,11 @@
   "proof_char_len": 29,
   "proof_sections": null,
   "model_used": "gpt-5",
-  "generation_time": 134.1714153289795,
+  "generation_time": 141.4632751941681,
   "success": false,
   "error_message": "LLM produced insufficient proof content (empty or too short).",
-  "token_count": 15083,
-  "generated_at": "2025-10-02T23:05:16.042959",
+  "token_count": 6270,
+  "generated_at": "2025-10-02T23:10:14.689750",
   "quality": {
     "math_balance_ok": true,
     "structure_markers": 0,
@@ -23,8 +23,8 @@
     "sketch_char_len": 0,
     "full_proof_char_len": 0,
     "has_split_proof_sections": false,
-    "prompt_char_len": 24186,
-    "context_char_len": 21321,
+    "prompt_char_len": 632,
+    "context_char_len": 283,
     "provenance": {
       "sections": [
         {
@@ -88,7 +88,9 @@
       "context_char_limit": 50000,
       "rag": {
         "enabled": false
-      }
+      },
+      "statement_only": true,
+      "rag_used": false
     },
     "structural": {
       "symbol_total": 12,
@@ -113,7 +115,7 @@
       "hallucination_risk_level": "medium"
     }
   },
-  "variant": "baseline",
-  "input_tokens": 9131,
+  "variant": "statement",
+  "input_tokens": 318,
   "output_tokens": 5952
 }

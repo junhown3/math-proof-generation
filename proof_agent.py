@@ -520,8 +520,7 @@ class MathematicalProofAgent:
             )
         
         try:
-            # Prepare context
-            # Support optional force_rag attribute (set externally via CLI)
+            # Prepare context (even for statement-only to reliably access theorem object)
             force_rag = getattr(self, 'force_rag', False)
             context = self.context_preparator.prepare_context(
                 paper, theorem_index,
@@ -532,14 +531,38 @@ class MathematicalProofAgent:
                 force_rag=force_rag
             )
             provenance = self.context_preparator.get_last_provenance()
-            
-            # Format prompt for LLM
-            prompt = self.context_preparator.format_for_llm_prompt(context)
-            prompt_char_len = len(prompt)
-            context_char_len = len(context.paper_context)
-            
-            print(f"Context prepared: {len(prompt):,} characters")
-            print(f"Target theorem: {context.theorem_to_prove.statement_type.value}")
+
+            if variant_tag == 'statement':
+                # Statement-only baseline variant: do NOT include broader paper context / other theorems.
+                # This isolates the model's ability to prove from premise alone.
+                stmt = context.theorem_to_prove.statement
+                stmt_type = context.theorem_to_prove.statement_type.value.title()
+                minimal_prompt = (
+                    f"You are an expert mathematician. Provide a rigorous proof for the following {stmt_type}.\n\n"
+                    f"{stmt}\n\n"
+                    "Guidelines:\n"
+                    "- If you cannot justify a step fully, insert a line starting with 'GAP:' explaining the missing justification.\n"
+                    "- Prefer clear structure, using lemmas only if they can be stated succinctly.\n"
+                    "- End with a concluding symbol such as QED or ∎.\n\n"
+                    "### Proof\n"
+                )
+                prompt = minimal_prompt
+                prompt_char_len = len(prompt)
+                # Context length is just theorem statement length (omit full paper context)
+                context_char_len = len(stmt)
+                # Replace provenance with a lightweight marker
+                provenance = provenance or {}
+                provenance['statement_only'] = True
+                provenance['rag_used'] = False
+                print(f"Statement-only prompt prepared: {prompt_char_len:,} chars (theorem chars: {context_char_len:,})")
+                print(f"Target theorem: {context.theorem_to_prove.statement_type.value}")
+            else:
+                # Standard full context path
+                prompt = self.context_preparator.format_for_llm_prompt(context)
+                prompt_char_len = len(prompt)
+                context_char_len = len(context.paper_context)
+                print(f"Context prepared: {len(prompt):,} characters")
+                print(f"Target theorem: {context.theorem_to_prove.statement_type.value}")
             
             # Generate proof
             start_time = time.time()
